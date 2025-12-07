@@ -9,27 +9,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Poppins',sans-serif;line-height:1.6;color:#fff;background:#0f172a;}
+    body{font-family:'Poppins',sans-serif;line-height:1.6;color:#fff;background:#0a1a2f;}
     a{color:#00ff88;text-decoration:none;}
     .container{max-width:1200px;margin:0 auto;padding:0 20px;}
-    header{height:100vh;background:linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)),url('https://images.unsplash.com/photo-1624880357913-a8539238245b?auto=format&fit=crop&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;}
-    .logo img{width:240px;margin-bottom:20px;}
-    .hero h1{font-size:5.4rem;color:#00ff88;}
-    .hero p{font-size:1.7rem;max-width:900px;margin:30px auto;}
-    .btn{display:inline-block;background:#00ff88;color:#000;padding:20px 55px;border-radius:50px;font-weight:700;font-size:1.5rem;transition:.3s;}
+    
+    /* NEW: Your logo as big background */
+    header{
+      height:100vh;
+      background:url('/firstLight-academy/images/logo.png') center/70% no-repeat fixed,
+                  linear-gradient(rgba(10,26,47,0.92),rgba(10,26,47,0.92));
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      position:relative;
+    }
+    .hero{z-index:2;}
+    .logo img{width:260px;margin-bottom:20px;}
+    .hero h1{font-size:5.6rem;color:#00ff88;margin:10px 0;}
+    .hero p{font-size:1.8rem;max-width:900px;margin:30px auto;}
+    .btn{display:inline-block;background:#00ff88;color:#000;padding:22px 60px;border-radius:50px;font-weight:700;font-size:1.6rem;transition:.3s;}
     .btn:hover{background:#fff;transform:scale(1.08);}
     .btn-wa{background:#25d366;color:#fff;}
     section{padding:110px 0;}
     .bg-dark{background:#1e293b;}
     .bg-light{background:#0f172a;}
-    h2{font-size:3.6rem;text-align:center;margin-bottom:70px;color:#00ff88;}
+    h2{font-size:3.7rem;text-align:center;margin-bottom:70px;color:#00ff88;}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px;}
     .card{background:#1e293b;padding:45px;border-radius:22px;text-align:center;transition:.4s;}
     .card:hover{transform:translateY(-15px);box-shadow:0 20px 50px rgba(0,255,136,.4);}
     .card img{width:100%;height:360px;object-fit:cover;border-radius:20px;margin-bottom:25px;}
-    .price-big{font-size:4.2rem;font-weight:800;color:#00ff88;}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;}
+    .gallery-grid img{width:100%;height:320px;object-fit:cover;border-radius:20px;transition:.3s;}
+    .gallery-grid img:hover{transform:scale(1.05);box-shadow:0 15px 40px rgba(0,255,136,.5);}
+    .price-big{font-size:4.4rem;font-weight:800;color:#00ff88;}
     footer{background:#000;padding:100px 0;text-align:center;}
-    @media(max-width:768px){.hero h1{font-size:3.6rem;}.logo img{width:170px;}.grid{grid-template-columns:1fr;}}
+    @media(max-width:768px){
+      .hero h1{font-size:3.6rem;}
+      .logo img{width:180px;}
+      header{background-size:90%;}
+    }
   </style>
 </head>
 <body>
@@ -53,19 +69,32 @@
       <div class="grid">
         <div class="card">
           <img src="/firstLight-academy/images/u14.jpg" alt="U14 Team">
-          <h3>U14 Elite Squad</h3>
-          <p>Competitive matches & tournaments</p>
+          <h3>U14 Elite Squad</h3><p>Competitive matches & tournaments</p>
         </div>
         <div class="card">
           <img src="/firstLight-academy/images/u10.jpg" alt="U10 Team">
-          <h3>U10 Development Squad</h3>
-          <p>Skills, confidence & match experience</p>
+          <h3>U10 Development Squad</h3><p>Skills & match experience</p>
         </div>
         <div class="card">
           <img src="/firstLight-academy/images/u6.jpg" alt="U6 Little Stars">
-          <h3>U6 Little Stars</h3>
-          <p>Fun-first introduction to football</p>
+          <h3>U6 Little Stars</h3><p>Fun-first football</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-light">
+    <div class="container">
+      <h2>Training & Goalkeeper Gallery</h2>
+      <div class="gallery-grid">
+        <img src="/firstLight-academy/images/gk1.jpg" alt="Goalkeeper">
+        <img src="/firstLight-academy/images/gk2.jpg" alt="Goalkeeper">
+        <img src="/firstLight-academy/images/gk3.jpg" alt="Goalkeeper">
+        <img src="/firstLight-academy/images/gk4.jpg" alt="Goalkeeper">
+        <img src="/firstLight-academy/images/u14.jpg" alt="U14">
+        <img src="/firstLight-academy/images/u10.jpg" alt="U10">
+        <img src="/firstLight-academy/images/u6.jpg" alt="U6">
+        <img src="/firstLight-academy/images/gk1.jpg" alt="Goalkeeper">
       </div>
     </div>
   </section>
@@ -76,19 +105,19 @@
       <div class="grid">
         <div class="card">
           <h3>Training Time</h3>
-          <p style="font-size:2.2rem;color:#00ff88;margin:25px 0;">
+          <p style="font-size:2.3rem;color:#00ff88;margin:25px 0;">
             Saturday & Sunday<br>15:30 – 17:30
           </p>
         </div>
         <div class="card">
           <h3>Monthly Fee</h3>
           <p class="price-big">60,000 TZS</p>
-          <p style="font-size:1.8rem;margin:25px 0;">per month (all ages)</p>
+          <p style="font-size:1.9rem;margin:25px 0;">per month</p>
         </div>
         <div class="card">
           <h3>FREE Trials</h3>
           <p class="price-big">Every Weekend</p>
-          <p style="font-size:1.8rem;margin:25px 0;">Just come & play!</p>
+          <p style="font-size:1.9rem;margin:25px 0;">Just come & play!</p>
         </div>
       </div>
     </div>
@@ -97,14 +126,14 @@
   <section id="register" class="bg-light">
     <div class="container" style="text-align:center;">
       <h2>Join FirstLight This Weekend!</h2>
-      <p style="font-size:1.9rem;margin:50px 0;">
+      <p style="font-size:2rem;margin:50px 0;">
         DYCCC Yemen Grounds<br>(Opposite DUCE University, Chang'ombe)
       </p>
       <a href="https://wa.me/255629384806?text=Habari!%20Nataka%20kujiunga%20FirstLight%20Academy%20(U6/U10/U14)%20%F0%9F%8F%88" 
-         class="btn btn-wa" style="font-size:1.9rem;padding:30px 100px;">
+         class="btn btn-wa" style="font-size:2rem;padding:32px 110px;">
          Register via WhatsApp
       </a>
-      <p style="margin-top:70px;font-size:1.6rem;line-height:2.5;">
+      <p style="margin-top:70px;font-size:1.7rem;line-height:2.5;">
         <strong>Contact:</strong><br>
         <a href="tel:+255629384806">+255 629 384 806</a> → Manager<br>
         <a href="tel:+255714463006">+255 714 463 006</a> → Coach
@@ -114,7 +143,7 @@
 
   <footer>
     <div class="container">
-      <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy" style="width:130px;margin-bottom:20px;">
+      <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy" style="width:140px;margin-bottom:20px;">
       <p>© 2025 FirstLight Football Academy – Dar es Salaam, Tanzania</p>
     </div>
   </footer>
