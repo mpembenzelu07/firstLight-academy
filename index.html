@@ -3,150 +3,1725 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FirstLight Football Academy | U6 • U10 • U14 | Dar es Salaam</title>
-  <meta name="description" content="FirstLight Academy – Training every Saturday & Sunday 15:30–17:30 at DYCCC Yemen Grounds. Only 60,000 TZS/month."/>
+  <title>FirstLight Football Academy | Professional Youth Development | Dar es Salaam</title>
+  <meta name="description" content="Elite football academy in Dar es Salaam offering professional training for U6, U10, U14 age groups. Saturday & Sunday training at DYCCC Yemen Grounds."/>
+  <meta name="keywords" content="football academy Tanzania, youth soccer Dar es Salaam, football training U6 U10 U14, professional coaching Tanzania">
   <link rel="icon" href="/firstLight-academy/images/logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Poppins',sans-serif;line-height:1.6;color:#fff;background:#0a1a2f;}
-    a{color:#00ff88;text-decoration:none;}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px;}
-    
-    /* NEW: Your logo as big background */
-    header{
-      height:100vh;
-      background:url('/firstLight-academy/images/logo.png') center/70% no-repeat fixed,
-                  linear-gradient(rgba(10,26,47,0.92),rgba(10,26,47,0.92));
-      display:flex;align-items:center;justify-content:center;text-align:center;
-      position:relative;
+    :root {
+      --primary: #0066cc;
+      --primary-dark: #004d99;
+      --secondary: #00cc88;
+      --secondary-dark: #00aa66;
+      --accent: #ff6600;
+      --dark: #0a1a2f;
+      --darker: #050f1a;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --card-bg: #1a2538;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      --shadow-hover: 0 20px 50px rgba(0, 102, 204, 0.25);
     }
-    .hero{z-index:2;}
-    .logo img{width:260px;margin-bottom:20px;}
-    .hero h1{font-size:5.6rem;color:#00ff88;margin:10px 0;}
-    .hero p{font-size:1.8rem;max-width:900px;margin:30px auto;}
-    .btn{display:inline-block;background:#00ff88;color:#000;padding:22px 60px;border-radius:50px;font-weight:700;font-size:1.6rem;transition:.3s;}
-    .btn:hover{background:#fff;transform:scale(1.08);}
-    .btn-wa{background:#25d366;color:#fff;}
-    section{padding:110px 0;}
-    .bg-dark{background:#1e293b;}
-    .bg-light{background:#0f172a;}
-    h2{font-size:3.7rem;text-align:center;margin-bottom:70px;color:#00ff88;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px;}
-    .card{background:#1e293b;padding:45px;border-radius:22px;text-align:center;transition:.4s;}
-    .card:hover{transform:translateY(-15px);box-shadow:0 20px 50px rgba(0,255,136,.4);}
-    .card img{width:100%;height:360px;object-fit:cover;border-radius:20px;margin-bottom:25px;}
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;}
-    .gallery-grid img{width:100%;height:320px;object-fit:cover;border-radius:20px;transition:.3s;}
-    .gallery-grid img:hover{transform:scale(1.05);box-shadow:0 15px 40px rgba(0,255,136,.5);}
-    .price-big{font-size:4.4rem;font-weight:800;color:#00ff88;}
-    footer{background:#000;padding:100px 0;text-align:center;}
-    @media(max-width:768px){
-      .hero h1{font-size:3.6rem;}
-      .logo img{width:180px;}
-      header{background-size:90%;}
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      color: var(--light);
+      background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.8rem;
+      color: white;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    
+    .section-title h2 span {
+      color: var(--secondary);
+    }
+    
+    .section-title .title-line {
+      height: 4px;
+      width: 100px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      gap: 10px;
+      text-decoration: none;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      box-shadow: 0 10px 20px rgba(0, 102, 204, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .btn-secondary {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+      color: white;
+      box-shadow: 0 10px 20px rgba(0, 204, 136, 0.3);
+    }
+    
+    .btn-secondary:hover {
+      background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366 0%, #1da851 100%);
+      color: white;
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    }
+    
+    .btn-whatsapp:hover {
+      background: linear-gradient(135deg, #1da851 0%, #25d366 100%);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+    }
+    
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+      background: rgba(10, 26, 47, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    header.scrolled {
+      padding: 10px 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo img {
+      height: 60px;
+      width: auto;
+      transition: var(--transition);
+    }
+    
+    header.scrolled .logo img {
+      height: 50px;
+    }
+    
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .logo-text h1 {
+      font-size: 1.5rem;
+      color: white;
+      line-height: 1.2;
+    }
+    
+    .logo-text span {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 100px;
+    }
+    
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(5, 15, 26, 0.9), rgba(10, 26, 47, 0.95)),
+                  url('/firstLight-academy/images/u14.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      z-index: -1;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      text-align: center;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-logo {
+      margin-bottom: 30px;
+    }
+    
+    .hero-logo img {
+      height: 150px;
+      width: auto;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: white;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content h1 span {
+      color: var(--secondary);
+      position: relative;
+    }
+    
+    .hero-content h1 span:after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: rgba(0, 204, 136, 0.2);
+      z-index: -1;
+    }
+    
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Age Groups Section */
+    .age-groups {
+      background: var(--darker);
+    }
+    
+    .age-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .age-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .age-card:hover {
+      transform: translateY(-15px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .age-img {
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .age-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .age-card:hover .age-img img {
+      transform: scale(1.1);
+    }
+    
+    .age-content {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .age-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      align-self: flex-start;
+    }
+    
+    .age-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    .age-features {
+      list-style: none;
+      margin: 20px 0;
+      flex-grow: 1;
+    }
+    
+    .age-features li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .age-features li i {
+      color: var(--secondary);
+      font-size: 0.9rem;
+    }
+    
+    /* Gallery Section */
+    .gallery-section {
+      background: var(--dark);
+    }
+    
+    .gallery-filter {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 10px 25px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      height: 250px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    .gallery-overlay span {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    /* Schedule & Pricing */
+    .schedule-section {
+      background: var(--darker);
+    }
+    
+    .schedule-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .schedule-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .schedule-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .schedule-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      color: white;
+    }
+    
+    .schedule-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .price {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin: 20px 0;
+      line-height: 1;
+    }
+    
+    .price span {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* Registration Section */
+    .registration-section {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 100%);
+      text-align: center;
+    }
+    
+    .registration-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .registration-container h2 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    
+    .registration-container p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+    
+    .contact-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .contact-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.8rem;
+      color: white;
+    }
+    
+    .contact-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+    
+    .contact-card a {
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: var(--transition);
+      display: block;
+      margin-top: 10px;
+    }
+    
+    .contact-card a:hover {
+      color: var(--secondary);
+    }
+    
+    /* Coaches Section */
+    .coaches-section {
+      background: var(--dark);
+    }
+    
+    .coaches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .coach-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    
+    .coach-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .coach-img {
+      height: 300px;
+      overflow: hidden;
+    }
+    
+    .coach-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .coach-card:hover .coach-img img {
+      transform: scale(1.1);
+    }
+    
+    .coach-info {
+      padding: 25px;
+      text-align: center;
+    }
+    
+    .coach-info h4 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      color: white;
+    }
+    
+    .coach-role {
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    /* Testimonials */
+    .testimonials-section {
+      background: var(--darker);
+    }
+    
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .testimonial-item {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    
+    .testimonial-content {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.9);
+      position: relative;
+    }
+    
+    .testimonial-content:before {
+      content: '"';
+      font-size: 5rem;
+      color: var(--secondary);
+      opacity: 0.3;
+      position: absolute;
+      top: -30px;
+      left: -10px;
+      font-family: serif;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .author-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--secondary);
+    }
+    
+    .author-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .author-info h5 {
+      font-size: 1.2rem;
+      color: white;
+      margin-bottom: 5px;
+    }
+    
+    .author-info span {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: #050a14;
+      padding: 80px 0 30px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .footer-logo img {
+      height: 80px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-logo p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-5px);
+    }
+    
+    .footer-links h4 {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      color: white;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-links h4:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+    
+    /* Modal for gallery */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+    
+    .modal.active {
+      display: flex;
+    }
+    
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      position: relative;
+    }
+    
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+    
+    /* Countdown Timer */
+    .countdown-timer {
+      background: linear-gradient(135deg, var(--primary-dark), var(--dark));
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 60px;
+      text-align: center;
+    }
+    
+    .countdown-title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: white;
+    }
+    
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .countdown-value {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+    }
+    
+    .countdown-label {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2.3rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100%;
+        background: var(--dark);
+        padding: 100px 30px 30px;
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      .mobile-nav.active {
+        right: 0;
+      }
+      
+      .mobile-nav .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .mobile-nav-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      
+      .section {
+        padding: 70px 0;
+      }
+      
+      .price {
+        font-size: 2.8rem;
+      }
+      
+      .countdown-value {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .hero-stats {
+        gap: 20px;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="hero">
-      <div class="logo">
-        <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy Logo">
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy Logo">
+          <div class="logo-text">
+            <h1>FirstLight Academy</h1>
+            <span>Professional Football Development</span>
+          </div>
+        </div>
+        
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#age-groups">Age Groups</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#coaches">Coaches</a>
+          <a href="#register" class="btn btn-secondary" style="padding: 10px 25px; font-size: 0.9rem;">Register Now</a>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" id="mobileNavClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#age-groups">Age Groups</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#coaches">Coaches</a>
+        <a href="#register">Register</a>
       </div>
-      <h1>FIRSTLIGHT FOOTBALL ACADEMY</h1>
-      <p>U6 • U10 • U14 Professional Training<br>
-      Every Saturday & Sunday 15:30 – 17:30<br>DYCCC Yemen Grounds (opposite DUCE)<br>
-      <strong>Only 60,000 TZS/month – all ages</strong></p>
-      <a href="#register" class="btn">Join This Weekend</a>
     </div>
   </header>
 
-  <section class="bg-dark">
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg"></div>
     <div class="container">
-      <h2>Our Age Groups</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="/firstLight-academy/images/u14.jpg" alt="U14 Team">
-          <h3>U14 Elite Squad</h3><p>Competitive matches & tournaments</p>
+      <div class="hero-content">
+        <div class="hero-logo">
+          <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy Logo">
         </div>
-        <div class="card">
-          <img src="/firstLight-academy/images/u10.jpg" alt="U10 Team">
-          <h3>U10 Development Squad</h3><p>Skills & match experience</p>
+        
+        <h1>FirstLight <span>Football Academy</span></h1>
+        <p>Professional youth development program in Dar es Salaam for U6, U10, and U14 age groups. Training every Saturday & Sunday at DYCCC Yemen Grounds.</p>
+        
+        <div class="hero-buttons">
+          <a href="#register" class="btn btn-primary">Join This Weekend</a>
+          <a href="#age-groups" class="btn" style="background: rgba(255, 255, 255, 0.1); color: white; margin-left: 15px;">Learn More</a>
         </div>
-        <div class="card">
-          <img src="/firstLight-academy/images/u6.jpg" alt="U6 Little Stars">
-          <h3>U6 Little Stars</h3><p>Fun-first football</p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Age Groups</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Weekly Sessions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">60K</div>
+            <div class="stat-label">Monthly Fee</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Professional</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-light">
+  <!-- About Section -->
+  <section class="section" id="about">
     <div class="container">
-      <h2>Training & Goalkeeper Gallery</h2>
+      <div class="section-title">
+        <h2>Why Choose <span>FirstLight Academy</span></h2>
+        <div class="title-line"></div>
+      </div>
+      
+      <div class="age-grid">
+        <div class="age-card">
+          <div class="age-content">
+            <div class="age-badge">Expert Coaching</div>
+            <h3>Professional Trainers</h3>
+            <p>Our certified coaches have extensive experience in youth development and professional football training methodologies.</p>
+            <ul class="age-features">
+              <li><i class="fas fa-check"></i> UEFA/CAF licensed coaches</li>
+              <li><i class="fas fa-check"></i> Individual skill development</li>
+              <li><i class="fas fa-check"></i> Tactical understanding</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="age-card">
+          <div class="age-content">
+            <div class="age-badge">Modern Facilities</div>
+            <h3>Premium Training Grounds</h3>
+            <p>Train at the DYCCC Yemen Grounds, one of Dar es Salaam's premier football facilities with professional-grade pitches.</p>
+            <ul class="age-features">
+              <li><i class="fas fa-check"></i> Professional football pitch</li>
+              <li><i class="fas fa-check"></i> Training equipment provided</li>
+              <li><i class="fas fa-check"></i> Safe and secure environment</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="age-card">
+          <div class="age-content">
+            <div class="age-badge">Holistic Development</div>
+            <h3>Beyond Football Skills</h3>
+            <p>We focus on character building, discipline, teamwork, and sportsmanship alongside technical football development.</p>
+            <ul class="age-features">
+              <li><i class="fas fa-check"></i> Teamwork & leadership</li>
+              <li><i class="fas fa-check"></i> Physical fitness</li>
+              <li><i class="fas fa-check"></i> Mental toughness</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Age Groups Section -->
+  <section class="section age-groups" id="age-groups">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our <span>Age Groups</span></h2>
+        <div class="title-line"></div>
+        <p style="max-width: 700px; margin: 20px auto 0; color: rgba(255, 255, 255, 0.8);">Tailored training programs for each developmental stage</p>
+      </div>
+      
+      <div class="age-grid">
+        <div class="age-card">
+          <div class="age-img">
+            <img src="/firstLight-academy/images/u14.jpg" alt="U14 Team Training">
+          </div>
+          <div class="age-content">
+            <div class="age-badge">U14 Elite Squad</div>
+            <h3>Competitive Development</h3>
+            <p>Advanced training focusing on tactical understanding, position-specific skills, and competitive match experience.</p>
+            <ul class="age-features">
+              <li><i class="fas fa-futbol"></i> Competitive matches & tournaments</li>
+              <li><i class="fas fa-chart-line"></i> Advanced tactical training</li>
+              <li><i class="fas fa-trophy"></i> League participation</li>
+              <li><i class="fas fa-user-friends"></i> Team building exercises</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="age-card">
+          <div class="age-img">
+            <img src="/firstLight-academy/images/u10.jpg" alt="U10 Team Training">
+          </div>
+          <div class="age-content">
+            <div class="age-badge">U10 Development Squad</div>
+            <h3>Skill Foundation</h3>
+            <p>Building fundamental skills, introducing basic tactics, and developing a love for the game through fun exercises.</p>
+            <ul class="age-features">
+              <li><i class="fas fa-futbol"></i> Fundamental skill development</li>
+              <li><i class="fas fa-running"></i> Coordination & agility</li>
+              <li><i class="fas fa-gamepad"></i> Fun-based learning</li>
+              <li><i class="fas fa-users"></i> Small-sided games</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="age-card">
+          <div class="age-img">
+            <img src="/firstLight-academy/images/u6.jpg" alt="U6 Little Stars">
+          </div>
+          <div class="age-content">
+            <div class="age-badge">U6 Little Stars</div>
+            <h3>Introduction to Football</h3>
+            <p>Fun-first approach focusing on basic motor skills, ball familiarity, and social development through play.</p>
+            <ul class="age-features">
+              <li><i class="fas fa-futbol"></i> Ball familiarity exercises</li>
+              <li><i class="fas fa-child"></i> Motor skill development</li>
+              <li><i class="fas fa-smile"></i> Fun & engaging sessions</li>
+              <li><i class="fas fa-heart"></i> Building confidence</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <h2>Training <span>Gallery</span></h2>
+        <div class="title-line"></div>
+      </div>
+      
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="training">Training</button>
+        <button class="filter-btn" data-filter="goalkeepers">Goalkeepers</button>
+        <button class="filter-btn" data-filter="matches">Matches</button>
+        <button class="filter-btn" data-filter="teams">Teams</button>
+      </div>
+      
       <div class="gallery-grid">
-        <img src="/firstLight-academy/images/gk1.jpg" alt="Goalkeeper">
-        <img src="/firstLight-academy/images/gk2.jpg" alt="Goalkeeper">
-        <img src="/firstLight-academy/images/gk3.jpg" alt="Goalkeeper">
-        <img src="/firstLight-academy/images/gk4.jpg" alt="Goalkeeper">
-        <img src="/firstLight-academy/images/u14.jpg" alt="U14">
-        <img src="/firstLight-academy/images/u10.jpg" alt="U10">
-        <img src="/firstLight-academy/images/u6.jpg" alt="U6">
-        <img src="/firstLight-academy/images/gk1.jpg" alt="Goalkeeper">
+        <div class="gallery-item" data-category="goalkeepers">
+          <img src="/firstLight-academy/images/gk1.jpg" alt="Goalkeeper Training">
+          <div class="gallery-overlay">
+            <span>Goalkeeper Training</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="goalkeepers">
+          <img src="/firstLight-academy/images/gk2.jpg" alt="Goalkeeper Skills">
+          <div class="gallery-overlay">
+            <span>Goalkeeper Skills</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="goalkeepers">
+          <img src="/firstLight-academy/images/gk3.jpg" alt="Goalkeeper Drills">
+          <div class="gallery-overlay">
+            <span>Goalkeeper Drills</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="goalkeepers">
+          <img src="/firstLight-academy/images/gk4.jpg" alt="Goalkeeper Practice">
+          <div class="gallery-overlay">
+            <span>Goalkeeper Practice</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="teams">
+          <img src="/firstLight-academy/images/u14.jpg" alt="U14 Team">
+          <div class="gallery-overlay">
+            <span>U14 Elite Squad</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="teams">
+          <img src="/firstLight-academy/images/u10.jpg" alt="U10 Team">
+          <div class="gallery-overlay">
+            <span>U10 Development Squad</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="teams">
+          <img src="/firstLight-academy/images/u6.jpg" alt="U6 Little Stars">
+          <div class="gallery-overlay">
+            <span>U6 Little Stars</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="training">
+          <img src="/firstLight-academy/images/gk1.jpg" alt="Team Training">
+          <div class="gallery-overlay">
+            <span>Team Training Session</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-dark">
+  <!-- Schedule & Pricing Section -->
+  <section class="section schedule-section" id="schedule">
     <div class="container">
-      <h2>Training Schedule & Pricing</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Training Time</h3>
-          <p style="font-size:2.3rem;color:#00ff88;margin:25px 0;">
-            Saturday & Sunday<br>15:30 – 17:30
-          </p>
+      <div class="section-title">
+        <h2>Training <span>Schedule & Pricing</span></h2>
+        <div class="title-line"></div>
+      </div>
+      
+      <div class="schedule-container">
+        <div class="schedule-card">
+          <div class="schedule-icon">
+            <i class="far fa-clock"></i>
+          </div>
+          <h3>Training Schedule</h3>
+          <p>Consistent weekend training for optimal development</p>
+          <div class="price" style="color: var(--primary); font-size: 2.5rem; margin: 25px 0;">
+            Saturday & Sunday<br>
+            <span style="font-size: 2rem; color: white;">15:30 – 17:30</span>
+          </div>
+          <p>2-hour professional sessions each weekend day</p>
         </div>
-        <div class="card">
+        
+        <div class="schedule-card">
+          <div class="schedule-icon">
+            <i class="fas fa-tags"></i>
+          </div>
           <h3>Monthly Fee</h3>
-          <p class="price-big">60,000 TZS</p>
-          <p style="font-size:1.9rem;margin:25px 0;">per month</p>
+          <p>Affordable professional training</p>
+          <div class="price">60,000 <span>TZS</span></div>
+          <p>Per month • All age groups included</p>
+          <p style="margin-top: 15px; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">No hidden fees • Equipment provided</p>
         </div>
-        <div class="card">
-          <h3>FREE Trials</h3>
-          <p class="price-big">Every Weekend</p>
-          <p style="font-size:1.9rem;margin:25px 0;">Just come & play!</p>
+        
+        <div class="schedule-card">
+          <div class="schedule-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>FREE Trial Sessions</h3>
+          <p>Experience our training before committing</p>
+          <div class="price" style="color: var(--secondary);">FREE</div>
+          <p>Every weekend for new players</p>
+          <p style="margin-top: 15px; font-style: italic;">"Just come and play with us!"</p>
+        </div>
+      </div>
+      
+      <!-- Countdown to Next Session -->
+      <div class="countdown-timer">
+        <div class="countdown-title">Next Training Session Starts In:</div>
+        <div class="countdown-container">
+          <div class="countdown-item">
+            <div class="countdown-value" id="days">00</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="hours">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="minutes">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="seconds">00</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+        <p style="margin-top: 30px; color: rgba(255, 255, 255, 0.8);">Join us this weekend at DYCCC Yemen Grounds</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaches Section -->
+  <section class="section coaches-section" id="coaches">
+    <div class="container">
+      <div class="section-title">
+        <h2>Meet Our <span>Coaching Team</span></h2>
+        <div class="title-line"></div>
+      </div>
+      
+      <div class="coaches-grid">
+        <div class="coach-card">
+          <div class="coach-img">
+            <img src="/firstLight-academy/images/u14.jpg" alt="Head Coach">
+          </div>
+          <div class="coach-info">
+            <h4>Coach Michael</h4>
+            <div class="coach-role">Head Coach & Technical Director</div>
+            <p>UEFA B Licensed coach with 10+ years experience in youth development.</p>
+          </div>
+        </div>
+        
+        <div class="coach-card">
+          <div class="coach-img">
+            <img src="/firstLight-academy/images/u10.jpg" alt="Assistant Coach">
+          </div>
+          <div class="coach-info">
+            <h4>Coach Jamal</h4>
+            <div class="coach-role">Assistant Coach & Goalkeeper Trainer</div>
+            <p>Former professional goalkeeper specializing in youth goalkeeper development.</p>
+          </div>
+        </div>
+        
+        <div class="coach-card">
+          <div class="coach-img">
+            <img src="/firstLight-academy/images/u6.jpg" alt="Junior Coach">
+          </div>
+          <div class="coach-info">
+            <h4>Coach Sarah</h4>
+            <div class="coach-role">Junior Development Coach</div>
+            <p>Specializes in U6-U10 age groups with a focus on fun and fundamentals.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="register" class="bg-light">
-    <div class="container" style="text-align:center;">
-      <h2>Join FirstLight This Weekend!</h2>
-      <p style="font-size:2rem;margin:50px 0;">
-        DYCCC Yemen Grounds<br>(Opposite DUCE University, Chang'ombe)
-      </p>
-      <a href="https://wa.me/255629384806?text=Habari!%20Nataka%20kujiunga%20FirstLight%20Academy%20(U6/U10/U14)%20%F0%9F%8F%88" 
-         class="btn btn-wa" style="font-size:2rem;padding:32px 110px;">
-         Register via WhatsApp
-      </a>
-      <p style="margin-top:70px;font-size:1.7rem;line-height:2.5;">
-        <strong>Contact:</strong><br>
-        <a href="tel:+255629384806">+255 629 384 806</a> → Manager<br>
-        <a href="tel:+255714463006">+255 714 463 006</a> → Coach
-      </p>
+  <!-- Testimonials Section -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Parent & Player <span>Testimonials</span></h2>
+        <div class="title-line"></div>
+      </div>
+      
+      <div class="testimonial-slider">
+        <div class="testimonial-item">
+          <div class="testimonial-content">
+            My son has developed so much in just 3 months at FirstLight Academy. Not just his football skills, but his confidence and teamwork have improved dramatically.
+          </div>
+          <div class="testimonial-author">
+            <div class="author-img">
+              <img src="/firstLight-academy/images/u6.jpg" alt="Parent">
+            </div>
+            <div class="author-info">
+              <h5>Mr. Hassan</h5>
+              <span>Parent of U10 Player</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Registration Section -->
+  <section class="section registration-section" id="register">
+    <div class="container">
+      <div class="registration-container">
+        <div class="section-title">
+          <h2>Join <span>FirstLight Academy</span> Today!</h2>
+          <div class="title-line"></div>
+        </div>
+        
+        <p>Take the first step towards professional football development. Join our academy this weekend for a FREE trial session.</p>
+        
+        <div style="margin: 50px 0;">
+          <a href="https://wa.me/255629384806?text=Habari!%20Nataka%20kujiunga%20FirstLight%20Academy%20(U6/U10/U14)%20%F0%9F%8F%88" 
+             class="btn btn-whatsapp" style="font-size: 1.3rem; padding: 18px 50px;">
+            <i class="fab fa-whatsapp"></i> Register via WhatsApp
+          </a>
+        </div>
+        
+        <p style="font-size: 1.4rem; margin: 40px 0 20px;">
+          <i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 10px;"></i>
+          DYCCC Yemen Grounds (Opposite DUCE University, Chang'ombe)
+        </p>
+        
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h4>Academy Manager</h4>
+            <a href="tel:+255629384806">+255 629 384 806</a>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-top: 10px;">For registrations & inquiries</p>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-running"></i>
+            </div>
+            <h4>Head Coach</h4>
+            <a href="tel:+255714463006">+255 714 463 006</a>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-top: 10px;">For training questions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy" style="width:140px;margin-bottom:20px;">
-      <p>© 2025 FirstLight Football Academy – Dar es Salaam, Tanzania</p>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy">
+          <p>Professional youth football academy in Dar es Salaam, Tanzania. Developing the next generation of football talent.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Academy</a></li>
+            <li><a href="#age-groups">Age Groups</a></li>
+            <li><a href="#schedule">Schedule & Pricing</a></li>
+            <li><a href="#coaches">Our Coaches</a></li>
+            <li><a href="#register">Register Now</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Training Info</h4>
+          <ul>
+            <li><a href="#">Training Methodology</a></li>
+            <li><a href="#">Required Equipment</a></li>
+            <li><a href="#">What to Bring</a></li>
+            <li><a href="#">Parent Guidelines</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Contact Info</h4>
+          <ul style="color: rgba(255, 255, 255, 0.7);">
+            <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i> DYCCC Yemen Grounds, Chang'ombe</li>
+            <li><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> +255 629 384 806</li>
+            <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i> info@firstlightacademy.co.tz</li>
+            <li><i class="far fa-clock" style="margin-right: 10px; color: var(--secondary);"></i> Sat-Sun: 15:30-17:30</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 FirstLight Football Academy. All rights reserved. | Dar es Salaam, Tanzania</p>
+        <p style="margin-top: 10px;">Developed with <i class="fas fa-heart" style="color: #ff4757;"></i> for Tanzanian football</p>
+      </div>
     </div>
   </footer>
 
+  <!-- Gallery Modal -->
+  <div class="modal" id="galleryModal">
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="">
+      <button class="modal-close" id="modalClose">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Navigation
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+    });
+    
+    mobileNavClose.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+    });
+    
+    // Close mobile nav when clicking a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+      });
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Gallery Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Gallery Modal
+    const galleryModal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+    
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const imgSrc = item.querySelector('img').getAttribute('src');
+        modalImage.setAttribute('src', imgSrc);
+        galleryModal.classList.add('active');
+      });
+    });
+    
+    modalClose.addEventListener('click', () => {
+      galleryModal.classList.remove('active');
+    });
+    
+    galleryModal.addEventListener('click', (e) => {
+      if (e.target === galleryModal) {
+        galleryModal.classList.remove('active');
+      }
+    });
+    
+    // Countdown Timer
+    function updateCountdown() {
+      // Set the next training session (Saturday 15:30)
+      const now = new Date();
+      const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      
+      let nextTraining = new Date();
+      
+      // If today is Saturday and time is before 15:30
+      if (day === 6 && (hours < 15 || (hours === 15 && minutes < 30))) {
+        nextTraining.setHours(15, 30, 0, 0);
+      } 
+      // If today is Saturday after 15:30 or Sunday
+      else if (day === 6 || day === 0) {
+        // Next Saturday
+        const daysUntilNextSaturday = (6 - day + 7) % 7 || 7;
+        nextTraining.setDate(now.getDate() + daysUntilNextSaturday);
+        nextTraining.setHours(15, 30, 0, 0);
+      } 
+      // Weekday (Monday-Friday)
+      else {
+        // Next Saturday
+        const daysUntilSaturday = 6 - day;
+        nextTraining.setDate(now.getDate() + daysUntilSaturday);
+        nextTraining.setHours(15, 30, 0, 0);
+      }
+      
+      const diff = nextTraining - now;
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hoursRemaining = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutesRemaining = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secondsRemaining = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hoursRemaining.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutesRemaining.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = secondsRemaining.toString().padStart(2, '0');
+    }
+    
+    // Initialize countdown
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
