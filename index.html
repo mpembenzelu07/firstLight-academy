@@ -140,6 +140,84 @@
       box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
     }
     
+    /* Language Toggle */
+    .language-toggle {
+      position: relative;
+      margin-left: 20px;
+    }
+    
+    .language-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .language-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .language-btn i {
+      font-size: 1rem;
+    }
+    
+    .language-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: var(--card-bg);
+      border-radius: 10px;
+      min-width: 150px;
+      margin-top: 10px;
+      box-shadow: var(--shadow);
+      display: none;
+      z-index: 1001;
+      overflow: hidden;
+    }
+    
+    .language-dropdown.active {
+      display: block;
+    }
+    
+    .language-option {
+      padding: 12px 20px;
+      color: white;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .language-option:hover {
+      background: rgba(0, 102, 204, 0.2);
+    }
+    
+    .language-option.active {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .language-flag {
+      width: 20px;
+      height: 15px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    
+    .language-flag img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
     /* Header & Navigation */
     header {
       position: fixed;
@@ -201,6 +279,7 @@
     .nav-links {
       display: flex;
       gap: 30px;
+      align-items: center;
     }
     
     .nav-links a {
@@ -1007,6 +1086,11 @@
         font-size: 1.8rem;
         cursor: pointer;
       }
+      
+      .language-toggle {
+        margin-left: 0;
+        margin-top: 20px;
+      }
     }
     
     @media (max-width: 768px) {
@@ -1078,6 +1162,39 @@
           <a href="#schedule">Schedule</a>
           <a href="#coaches">Coaches</a>
           <a href="#register" class="btn btn-secondary" style="padding: 10px 25px; font-size: 0.9rem;">Register Now</a>
+          
+          <!-- Language Toggle -->
+          <div class="language-toggle">
+            <button class="language-btn" id="languageBtn">
+              <i class="fas fa-globe"></i>
+              <span id="currentLanguage">English</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="language-dropdown" id="languageDropdown">
+              <div class="language-option active" data-lang="en">
+                <div class="language-flag">
+                  <!-- English flag (UK) -->
+                  <div style="background: #00247D; width: 100%; height: 100%; position: relative;">
+                    <div style="position: absolute; width: 100%; height: 33%; background: white; top: 33%;"></div>
+                    <div style="position: absolute; height: 100%; width: 15%; background: white; left: 33%;"></div>
+                    <div style="position: absolute; width: 100%; height: 15%; background: #CF142B; top: 42.5%;"></div>
+                    <div style="position: absolute; height: 100%; width: 8%; background: #CF142B; left: 38%;"></div>
+                  </div>
+                </div>
+                English
+              </div>
+              <div class="language-option" data-lang="sw">
+                <div class="language-flag">
+                  <!-- Tanzania flag -->
+                  <div style="background: #1EB53A; width: 50%; height: 100%; float: left;"></div>
+                  <div style="background: #00A3DD; width: 50%; height: 100%; float: left;"></div>
+                  <div style="background: #000; width: 100%; height: 33%; position: absolute; top: 33%;"></div>
+                  <div style="background: #FCD116; width: 4%; height: 100%; position: absolute; left: 48%;"></div>
+                </div>
+                Kiswahili
+              </div>
+            </div>
+          </div>
         </div>
         
         <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -1099,6 +1216,39 @@
         <a href="#schedule">Schedule</a>
         <a href="#coaches">Coaches</a>
         <a href="#register">Register</a>
+        
+        <!-- Language Toggle for Mobile -->
+        <div class="language-toggle" style="margin-left: 0;">
+          <button class="language-btn" id="mobileLanguageBtn">
+            <i class="fas fa-globe"></i>
+            <span id="mobileCurrentLanguage">English</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="language-dropdown" id="mobileLanguageDropdown">
+            <div class="language-option active" data-lang="en">
+              <div class="language-flag">
+                <!-- English flag (UK) -->
+                <div style="background: #00247D; width: 100%; height: 100%; position: relative;">
+                  <div style="position: absolute; width: 100%; height: 33%; background: white; top: 33%;"></div>
+                  <div style="position: absolute; height: 100%; width: 15%; background: white; left: 33%;"></div>
+                  <div style="position: absolute; width: 100%; height: 15%; background: #CF142B; top: 42.5%;"></div>
+                  <div style="position: absolute; height: 100%; width: 8%; background: #CF142B; left: 38%;"></div>
+                </div>
+              </div>
+              English
+            </div>
+            <div class="language-option" data-lang="sw">
+              <div class="language-flag">
+                <!-- Tanzania flag -->
+                <div style="background: #1EB53A; width: 50%; height: 100%; float: left;"></div>
+                <div style="background: #00A3DD; width: 50%; height: 100%; float: left;"></div>
+                <div style="background: #000; width: 100%; height: 33%; position: absolute; top: 33%;"></div>
+                <div style="background: #FCD116; width: 4%; height: 100%; position: absolute; left: 48%;"></div>
+              </div>
+              Kiswahili
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -1583,6 +1733,176 @@
   </div>
 
   <script>
+    // Language data
+    const translations = {
+      en: {
+        // Navigation
+        home: "Home",
+        about: "About",
+        ageGroups: "Age Groups",
+        gallery: "Gallery",
+        schedule: "Schedule",
+        coaches: "Coaches",
+        register: "Register Now",
+        
+        // Hero Section
+        heroTitle: "FirstLight <span>Football Academy</span>",
+        heroSubtitle: "Professional youth development program in Dar es Salaam for U6, U10, and U14 age groups. Training every Saturday & Sunday at DYCCC Yemen Grounds.",
+        joinWeekend: "Join This Weekend",
+        learnMore: "Learn More",
+        ageGroupsLabel: "Age Groups",
+        weeklySessions: "Weekly Sessions",
+        monthlyFee: "Monthly Fee",
+        professional: "Professional",
+        
+        // About Section
+        whyChoose: "Why Choose <span>FirstLight Academy</span>",
+        expertCoaching: "Expert Coaching",
+        professionalTrainers: "Professional Trainers",
+        coachesDesc: "Our certified coaches have extensive experience in youth development and professional football training methodologies.",
+        modernFacilities: "Modern Facilities",
+        premiumTraining: "Premium Training Grounds",
+        facilitiesDesc: "Train at the DYCCC Yemen Grounds, one of Dar es Salaam's premier football facilities with professional-grade pitches.",
+        holisticDevelopment: "Holistic Development",
+        beyondFootball: "Beyond Football Skills",
+        developmentDesc: "We focus on character building, discipline, teamwork, and sportsmanship alongside technical football development.",
+        
+        // Age Groups Section
+        ourAgeGroups: "Our <span>Age Groups</span>",
+        tailoredPrograms: "Tailored training programs for each developmental stage",
+        u14Badge: "U14 Elite Squad",
+        u14Title: "Competitive Development",
+        u14Desc: "Advanced training focusing on tactical understanding, position-specific skills, and competitive match experience.",
+        u10Badge: "U10 Development Squad",
+        u10Title: "Skill Foundation",
+        u10Desc: "Building fundamental skills, introducing basic tactics, and developing a love for the game through fun exercises.",
+        u6Badge: "U6 Little Stars",
+        u6Title: "Introduction to Football",
+        u6Desc: "Fun-first approach focusing on basic motor skills, ball familiarity, and social development through play.",
+        
+        // Gallery Section
+        trainingGallery: "Training <span>Gallery</span>",
+        all: "All",
+        training: "Training",
+        goalkeepers: "Goalkeepers",
+        matches: "Matches",
+        teams: "Teams",
+        
+        // Schedule Section
+        trainingSchedule: "Training <span>Schedule & Pricing</span>",
+        scheduleTitle: "Training Schedule",
+        scheduleDesc: "Consistent weekend training for optimal development",
+        monthlyFeeTitle: "Monthly Fee",
+        affordableTraining: "Affordable professional training",
+        trialSessions: "FREE Trial Sessions",
+        trialDesc: "Experience our training before committing",
+        nextSession: "Next Training Session Starts In:",
+        joinUs: "Join us this weekend at DYCCC Yemen Grounds",
+        
+        // Coaches Section
+        meetCoaches: "Meet Our <span>Coaching Team</span>",
+        
+        // Testimonials
+        testimonials: "Parent & Player <span>Testimonials</span>",
+        
+        // Registration
+        joinToday: "Join <span>FirstLight Academy</span> Today!",
+        registrationDesc: "Take the first step towards professional football development. Join our academy this weekend for a FREE trial session.",
+        location: "DYCCC Yemen Grounds (Opposite DUCE University, Chang'ombe)",
+        
+        // Footer
+        footerDesc: "Professional youth football academy in Dar es Salaam, Tanzania. Developing the next generation of football talent.",
+        quickLinks: "Quick Links",
+        trainingInfo: "Training Info",
+        contactInfo: "Contact Info",
+        copyright: "&copy; 2025 FirstLight Football Academy. All rights reserved. | Dar es Salaam, Tanzania",
+        developed: "Developed with <i class='fas fa-heart' style='color: #ff4757;'></i> for Tanzanian football"
+      },
+      sw: {
+        // Navigation
+        home: "Nyumbani",
+        about: "Kuhusu",
+        ageGroups: "Makundi ya Umri",
+        gallery: "Picha",
+        schedule: "Ratiba",
+        coaches: "Makocha",
+        register: "Jiandikishe Sasa",
+        
+        // Hero Section
+        heroTitle: "FirstLight <span>Football Academy</span>",
+        heroSubtitle: "Programu ya kitaalamu ya kukuza vijana wa Dar es Salaam kwa makundi ya U6, U10, na U14. Mazoezi kila Jumamosi na Jumapili kwenye Uwanja wa DYCCC Yemen.",
+        joinWeekend: "Jiunge Wikendi Hii",
+        learnMore: "Jifunze Zaidi",
+        ageGroupsLabel: "Makundi ya Umri",
+        weeklySessions: "Mazoezi ya Wiki",
+        monthlyFee: "Ada ya Mwezi",
+        professional: "Kitaalamu",
+        
+        // About Section
+        whyChoose: "Kwa Nini <span>FirstLight Academy</span>",
+        expertCoaching: "Ufundishaji wa Kitaalamu",
+        professionalTrainers: "Makocha Wataalamu",
+        coachesDesc: "Makocha wetu wenye cheti wana uzoefu mkubwa katika ukuzaji wa vijana na mbinu za kitaalamu za mafunzo ya mpira wa miguu.",
+        modernFacilities: "Vifaa Vya Kisasa",
+        premiumTraining: "Uwanja Bora wa Mazoezi",
+        facilitiesDesc: "Fanya mazoezi kwenye Uwanja wa DYCCC Yemen, moja wapo ya uwanja bora wa mpira wa miguu nchini Tanzania.",
+        holisticDevelopment: "Kukuza Kwa Ujumla",
+        beyondFootball: "Zaidi ya Ujuzi wa Soka",
+        developmentDesc: "Tunazingatia ujenzi wa tabia, nidhamu, ushirikiano, na uhusiano mzuri pamoja na ukuzaji wa kitaalamu wa mpira wa miguu.",
+        
+        // Age Groups Section
+        ourAgeGroups: "Makundi Yetu ya <span>Umri</span>",
+        tailoredPrograms: "Mipango maalum ya mafunzo kwa kila hatua ya ukuzaji",
+        u14Badge: "Kikosi Bora cha U14",
+        u14Title: "Ukuzaji wa Ushindani",
+        u14Desc: "Mafunzo ya hali ya juu yanayolenga uelewa wa mkakati, ujuzi maalum wa nafasi, na uzoefu wa mechi za ushindani.",
+        u10Badge: "Kikosi cha Ukuzaji cha U10",
+        u10Title: "Msingi wa Ujuzi",
+        u10Desc: "Kujenga ujuzi wa msingi, kuanzisha mbinu za msingi, na kukuza upendo wa mchezo kupitia mazoezi ya kufurahisha.",
+        u6Badge: "Nyota Wadogo wa U6",
+        u6Title: "Utangulizi wa Soka",
+        u6Desc: "Mbinu ya kwanza ya kufurahisha inayolenga ujuzi wa msingi wa mwendo, uzoefu wa mpira, na ukuzaji wa kijamii kupitia mchezo.",
+        
+        // Gallery Section
+        trainingGallery: "Picha za <span>Mazoezi</span>",
+        all: "Zote",
+        training: "Mazoezi",
+        goalkeepers: "Walinzi wa Malango",
+        matches: "Mechi",
+        teams: "Vikosi",
+        
+        // Schedule Section
+        trainingSchedule: "Ratiba ya <span>Mazoezi & Bei</span>",
+        scheduleTitle: "Ratiba ya Mazoezi",
+        scheduleDesc: "Mazoezi ya kudumu ya wikendi kwa ukuzaji bora",
+        monthlyFeeTitle: "Ada ya Mwezi",
+        affordableTraining: "Mafunzo ya kitaalamu ya bei nafuu",
+        trialSessions: "Mazoezi ya BURE ya Majaribio",
+        trialDesc: "Jaribu mafunzo yetu kabla ya kujiunga",
+        nextSession: "Kipindi Kijacho cha Mazoezi Kinaanza Baada ya:",
+        joinUs: "Jiunge nasi wikendi hii kwenye Uwanja wa DYCCC Yemen",
+        
+        // Coaches Section
+        meetCoaches: "Kutana na <span>Timu Yetu ya Makocha</span>",
+        
+        // Testimonials
+        testimonials: "Maoni ya <span>Wazazi na Wachezaji</span>",
+        
+        // Registration
+        joinToday: "Jiunge na <span>FirstLight Academy</span> Leo!",
+        registrationDesc: "Chukua hatua ya kwanza kuelekea ukuzaji wa kitaalamu wa mpira wa miguu. Jiunge na akademi yetu wikendi hii kwa mazoezi ya BURE ya majaribio.",
+        location: "Uwanja wa DYCCC Yemen (Mbali na Chuo Kikuu cha DUCE, Chang'ombe)",
+        
+        // Footer
+        footerDesc: "Akademia ya kitaalamu ya mpira wa miguu kwa vijana jijini Dar es Salaam, Tanzania. Kukuza kizazi kijacho cha vipaji vya mpira wa miguu.",
+        quickLinks: "Viungo vya Haraka",
+        trainingInfo: "Taarifa za Mazoezi",
+        contactInfo: "Taarifa za Mawasiliano",
+        copyright: "&copy; 2025 FirstLight Football Academy. Haki zote zimehifadhiwa. | Dar es Salaam, Tanzania",
+        developed: "Imetengenezwa kwa <i class='fas fa-heart' style='color: #ff4757;'></i> kwa mpira wa miguu wa Tanzania"
+      }
+    };
+
     // Mobile Navigation
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
@@ -1722,6 +2042,168 @@
         }
       });
     });
+    
+    // Language Toggle Functionality
+    const languageBtn = document.getElementById('languageBtn');
+    const mobileLanguageBtn = document.getElementById('mobileLanguageBtn');
+    const languageDropdown = document.getElementById('languageDropdown');
+    const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
+    const currentLanguage = document.getElementById('currentLanguage');
+    const mobileCurrentLanguage = document.getElementById('mobileCurrentLanguage');
+    
+    let currentLang = 'en';
+    
+    // Toggle dropdowns
+    languageBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      languageDropdown.classList.toggle('active');
+    });
+    
+    mobileLanguageBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileLanguageDropdown.classList.toggle('active');
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', () => {
+      languageDropdown.classList.remove('active');
+      mobileLanguageDropdown.classList.remove('active');
+    });
+    
+    // Language selection
+    function selectLanguage(lang) {
+      currentLang = lang;
+      
+      // Update active state in dropdowns
+      document.querySelectorAll('.language-option').forEach(option => {
+        option.classList.remove('active');
+        if (option.getAttribute('data-lang') === lang) {
+          option.classList.add('active');
+        }
+      });
+      
+      // Update current language display
+      currentLanguage.textContent = lang === 'en' ? 'English' : 'Kiswahili';
+      mobileCurrentLanguage.textContent = lang === 'en' ? 'English' : 'Kiswahili';
+      
+      // Apply translations
+      applyTranslations(lang);
+      
+      // Close dropdowns
+      languageDropdown.classList.remove('active');
+      mobileLanguageDropdown.classList.remove('active');
+    }
+    
+    // Apply translations to the page
+    function applyTranslations(lang) {
+      const t = translations[lang];
+      
+      // Navigation
+      document.querySelectorAll('.nav-links a').forEach((link, index) => {
+        if (index === 0) link.textContent = t.home;
+        else if (index === 1) link.textContent = t.about;
+        else if (index === 2) link.textContent = t.ageGroups;
+        else if (index === 3) link.textContent = t.gallery;
+        else if (index === 4) link.textContent = t.schedule;
+        else if (index === 5) link.textContent = t.coaches;
+        else if (index === 6) link.textContent = t.register;
+      });
+      
+      // Hero Section
+      document.querySelector('.hero-content h1').innerHTML = t.heroTitle;
+      document.querySelector('.hero-content p').textContent = t.heroSubtitle;
+      document.querySelector('.hero-buttons .btn-primary').textContent = t.joinWeekend;
+      document.querySelector('.hero-buttons .btn:nth-child(2)').textContent = t.learnMore;
+      document.querySelectorAll('.stat-label')[0].textContent = t.ageGroupsLabel;
+      document.querySelectorAll('.stat-label')[1].textContent = t.weeklySessions;
+      document.querySelectorAll('.stat-label')[2].textContent = t.monthlyFee;
+      document.querySelectorAll('.stat-label')[3].textContent = t.professional;
+      
+      // About Section
+      document.querySelector('#about .section-title h2').innerHTML = t.whyChoose;
+      document.querySelectorAll('.age-badge')[0].textContent = t.expertCoaching;
+      document.querySelectorAll('.age-content h3')[0].textContent = t.professionalTrainers;
+      document.querySelectorAll('.age-content p')[0].textContent = t.coachesDesc;
+      document.querySelectorAll('.age-badge')[1].textContent = t.modernFacilities;
+      document.querySelectorAll('.age-content h3')[1].textContent = t.premiumTraining;
+      document.querySelectorAll('.age-content p')[1].textContent = t.facilitiesDesc;
+      document.querySelectorAll('.age-badge')[2].textContent = t.holisticDevelopment;
+      document.querySelectorAll('.age-content h3')[2].textContent = t.beyondFootball;
+      document.querySelectorAll('.age-content p')[2].textContent = t.developmentDesc;
+      
+      // Age Groups Section
+      document.querySelector('#age-groups .section-title h2').innerHTML = t.ourAgeGroups;
+      document.querySelector('#age-groups .section-title p').textContent = t.tailoredPrograms;
+      document.querySelectorAll('.age-badge')[3].textContent = t.u14Badge;
+      document.querySelectorAll('.age-content h3')[3].textContent = t.u14Title;
+      document.querySelectorAll('.age-content p')[3].textContent = t.u14Desc;
+      document.querySelectorAll('.age-badge')[4].textContent = t.u10Badge;
+      document.querySelectorAll('.age-content h3')[4].textContent = t.u10Title;
+      document.querySelectorAll('.age-content p')[4].textContent = t.u10Desc;
+      document.querySelectorAll('.age-badge')[5].textContent = t.u6Badge;
+      document.querySelectorAll('.age-content h3')[5].textContent = t.u6Title;
+      document.querySelectorAll('.age-content p')[5].textContent = t.u6Desc;
+      
+      // Gallery Section
+      document.querySelector('#gallery .section-title h2').innerHTML = t.trainingGallery;
+      document.querySelectorAll('.filter-btn')[0].textContent = t.all;
+      document.querySelectorAll('.filter-btn')[1].textContent = t.training;
+      document.querySelectorAll('.filter-btn')[2].textContent = t.goalkeepers;
+      document.querySelectorAll('.filter-btn')[3].textContent = t.matches;
+      document.querySelectorAll('.filter-btn')[4].textContent = t.teams;
+      
+      // Schedule Section
+      document.querySelector('#schedule .section-title h2').innerHTML = t.trainingSchedule;
+      document.querySelectorAll('.schedule-card h3')[0].textContent = t.scheduleTitle;
+      document.querySelectorAll('.schedule-card p')[0].textContent = t.scheduleDesc;
+      document.querySelectorAll('.schedule-card h3')[1].textContent = t.monthlyFeeTitle;
+      document.querySelectorAll('.schedule-card p')[1].textContent = t.affordableTraining;
+      document.querySelectorAll('.schedule-card h3')[2].textContent = t.trialSessions;
+      document.querySelectorAll('.schedule-card p')[2].textContent = t.trialDesc;
+      document.querySelector('.countdown-title').textContent = t.nextSession;
+      document.querySelector('.countdown-timer p').textContent = t.joinUs;
+      
+      // Coaches Section
+      document.querySelector('#coaches .section-title h2').innerHTML = t.meetCoaches;
+      
+      // Testimonials Section
+      document.querySelector('.testimonials-section .section-title h2').innerHTML = t.testimonials;
+      
+      // Registration Section
+      document.querySelector('#register .section-title h2').innerHTML = t.joinToday;
+      document.querySelector('#register .registration-container p').textContent = t.registrationDesc;
+      document.querySelector('#register p:nth-of-type(2)').innerHTML = `<i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 10px;"></i> ${t.location}`;
+      
+      // Footer
+      document.querySelector('.footer-logo p').textContent = t.footerDesc;
+      document.querySelectorAll('.footer-links h4')[0].textContent = t.quickLinks;
+      document.querySelectorAll('.footer-links h4')[1].textContent = t.trainingInfo;
+      document.querySelectorAll('.footer-links h4')[2].textContent = t.contactInfo;
+      document.querySelector('.footer-bottom p:nth-child(1)').innerHTML = t.copyright;
+      document.querySelector('.footer-bottom p:nth-child(2)').innerHTML = t.developed;
+      
+      // Mobile navigation
+      document.querySelectorAll('.mobile-nav .nav-links a').forEach((link, index) => {
+        if (index === 0) link.textContent = t.home;
+        else if (index === 1) link.textContent = t.about;
+        else if (index === 2) link.textContent = t.ageGroups;
+        else if (index === 3) link.textContent = t.gallery;
+        else if (index === 4) link.textContent = t.schedule;
+        else if (index === 5) link.textContent = t.coaches;
+        else if (index === 6) link.textContent = t.register;
+      });
+    }
+    
+    // Initialize language selection
+    document.querySelectorAll('.language-option').forEach(option => {
+      option.addEventListener('click', () => {
+        const lang = option.getAttribute('data-lang');
+        selectLanguage(lang);
+      });
+    });
+    
+    // Initialize with English
+    selectLanguage('en');
   </script>
 </body>
 </html>
