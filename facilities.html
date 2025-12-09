@@ -3,13 +3,732 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Facilities | Professional Training Environment</title>
-  <meta name="description" content="Professional football training facilities at DYCCC Yemen Grounds. Modern equipment and safe environment for youth development."/>
-  <meta name="keywords" content="football training facilities, soccer pitch Tanzania, training equipment Dar es Salaam">
-  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <title>Facilities | FirstLight Football Academy | DYCCC Yemen Grounds Chang'ombe</title>
+  <meta name="description" content="FirstLight Academy training facilities at DYCCC Yemen Grounds, Chang'ombe. Professional football pitch and training equipment."/>
+  <link rel="icon" href="/firstLight-academy/images/logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root {
+      --primary: #0A2463;
+      --secondary: #FF6B35;
+      --light: #f8f9fa;
+      --dark: #1e1e24;
+      --text-dark: #333;
+      --text-light: #fff;
+      --gray: #6c757d;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--light);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary);
+      color: var(--text-light);
+    }
+
+    .btn-primary:hover {
+      background-color: #e55a2b;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background-color: var(--primary);
+      color: var(--text-light);
+    }
+
+    .btn-secondary:hover {
+      background-color: #081F4E;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2 span {
+      color: var(--secondary);
+    }
+
+    .title-line {
+      height: 4px;
+      width: 80px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      margin: 0 auto 20px;
+      border-radius: 2px;
+    }
+
+    /* Header & Navigation - Same as Homepage */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    #header.scrolled {
+      padding: 10px 0;
+      background-color: rgba(255, 255, 255, 0.98);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    .logo-text h1 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+
+    .logo-text span {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--dark);
+      position: relative;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--secondary);
+      border-radius: 2px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.9)), 
+                  url('/firstLight-academy/images/gk1.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--text-light);
+      padding: 180px 0 100px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .page-header-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .page-header-content h1 span {
+      color: var(--secondary);
+    }
+
+    .page-header-content p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Facilities Overview */
+    .facilities-overview {
+      background-color: var(--light);
+    }
+
+    .facility-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    .facility-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 30px;
+      background: var(--primary);
+      color: white;
+    }
+
+    .facility-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .facility-content {
+      padding: 30px;
+    }
+
+    .facility-content h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .facility-features {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .facility-features li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .facility-features li i {
+      color: var(--secondary);
+    }
+
+    /* Location Map */
+    .location-section {
+      background-color: var(--primary);
+      color: var(--text-light);
+    }
+
+    .location-section .section-title h2,
+    .location-section .section-title p {
+      color: var(--text-light);
+    }
+
+    .location-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .map-placeholder {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 40px;
+      text-align: center;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .map-placeholder i {
+      font-size: 4rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .location-info {
+      padding: 20px;
+    }
+
+    .location-info h3 {
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .location-details {
+      list-style: none;
+    }
+
+    .location-details li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .location-details li i {
+      color: var(--secondary);
+      margin-top: 5px;
+    }
+
+    /* Equipment Section */
+    .equipment-section {
+      background-color: var(--light);
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .equipment-card {
+      text-align: center;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .equipment-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .equipment-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(10, 36, 99, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .equipment-icon i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    /* Safety & Security */
+    .safety-section {
+      background-color: var(--primary);
+      color: var(--text-light);
+    }
+
+    .safety-section .section-title h2,
+    .safety-section .section-title p {
+      color: var(--text-light);
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .safety-card {
+      text-align: center;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .safety-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .safety-icon i {
+      font-size: 1.8rem;
+      color: var(--secondary);
+    }
+
+    /* Transportation */
+    .transport-section {
+      background-color: var(--light);
+    }
+
+    .transport-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .transport-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 25px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .transport-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Footer - Same as Homepage */
+    footer {
+      background-color: var(--dark);
+      color: var(--text-light);
+      padding: 80px 0 30px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-logo img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      color: white;
+    }
+
+    .social-links a:hover {
+      background-color: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    .footer-links h4 {
+      color: var(--text-light);
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-links h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+
+    .footer-links ul li {
+      margin-bottom: 15px;
+    }
+
+    .footer-links ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .footer-links ul li a:hover {
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+
+    .footer-links ul li i {
+      margin-right: 10px;
+      color: var(--secondary);
+      width: 20px;
+    }
+
+    .footer-newsletter p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .newsletter-form input {
+      padding: 15px;
+      border-radius: 5px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-light);
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .newsletter-form button {
+      padding: 15px;
+      background-color: var(--secondary);
+      color: var(--text-light);
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+      background-color: #E55A2B;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-bottom p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .page-header-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .facility-header {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0;
+      }
+      
+      .page-header {
+        padding: 150px 0 80px;
+      }
+      
+      .page-header-content h1 {
+        font-size: 2rem;
+      }
+      
+      .page-header-content p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .location-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .footer-bottom-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-header-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .facility-header,
+      .facility-content {
+        padding: 20px;
+      }
+      
+      .transport-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100%;
+      background: var(--dark);
+      padding: 100px 30px 30px;
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .mobile-nav .nav-links a {
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .mobile-nav .btn {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <!-- Header & Navigation -->
@@ -17,7 +736,7 @@
     <div class="container">
       <nav class="navbar">
         <a href="index.html" class="logo">
-          <img src="assets/images/logo.png" alt="FirstLight Academy Logo">
+          <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy Logo">
           <div class="logo-text">
             <h1>FirstLight Academy</h1>
             <span>Football Excellence</span>
@@ -32,25 +751,6 @@
           <a href="coaches.html">Coaches</a>
           <a href="schedule.html">Schedule</a>
           <a href="contact.html" class="btn btn-secondary">Register Now</a>
-          
-          <!-- Language Toggle -->
-          <div class="language-toggle">
-            <button class="language-btn" id="languageBtn">
-              <i class="fas fa-globe"></i>
-              <span id="currentLanguage">English</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="language-dropdown" id="languageDropdown">
-              <div class="language-option active" data-lang="en">
-                <div class="language-flag flag-uk"></div>
-                English
-              </div>
-              <div class="language-option" data-lang="sw">
-                <div class="language-flag flag-tz"></div>
-                Kiswahili
-              </div>
-            </div>
-          </div>
         </div>
         
         <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -58,251 +758,274 @@
         </button>
       </nav>
     </div>
-    
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobileNav">
-      <button class="mobile-nav-close" id="mobileNavClose">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="programs.html">Programs</a>
-        <a href="facilities.html" class="active">Facilities</a>
-        <a href="coaches.html">Coaches</a>
-        <a href="schedule.html">Schedule</a>
-        <a href="contact.html">Register</a>
-        
-        <!-- Language Toggle for Mobile -->
-        <div class="language-toggle" style="margin-left: 0;">
-          <button class="language-btn" id="mobileLanguageBtn">
-            <i class="fas fa-globe"></i>
-            <span id="mobileCurrentLanguage">English</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="language-dropdown" id="mobileLanguageDropdown">
-            <div class="language-option active" data-lang="en">
-              <div class="language-flag flag-uk"></div>
-              English
-            </div>
-            <div class="language-option" data-lang="sw">
-              <div class="language-flag flag-tz"></div>
-              Kiswahili
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="programs.html">Programs</a>
+      <a href="facilities.html" class="active">Facilities</a>
+      <a href="coaches.html">Coaches</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="contact.html" class="btn btn-secondary">Register</a>
+    </div>
+  </div>
 
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1 data-translate="facilitiesTitle">Our <span>Facilities</span></h1>
-      <p data-translate="facilitiesSubtitle">Professional training environment at DYCCC Yemen Grounds</p>
-    </div>
-  </section>
-
-  <!-- Facilities Overview -->
-  <section class="section">
-    <div class="container">
-      <div class="content-grid">
-        <div class="content-text">
-          <h2>World-Class <span>Training Facilities</span></h2>
-          <p>FirstLight Academy trains at the prestigious DYCCC Yemen Grounds, one of Dar es Salaam's premier football facilities. Our location provides the perfect environment for youth development with professional-grade infrastructure.</p>
-          
-          <div style="margin-top: 30px;">
-            <h4 style="color: var(--secondary); margin-bottom: 15px;">Location Advantages:</h4>
-            <ul style="list-style: none; color: rgba(255, 255, 255, 0.8);">
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Centrally located in Chang'ombe
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Opposite DUCE University for easy access
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Secure and gated premises
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Ample parking for parents
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Shaded viewing areas
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="content-image">
-          <img src="https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Training Grounds">
-        </div>
+      <div class="page-header-content">
+        <h1>Our <span>Facilities</span></h1>
+        <p>Professional training environment at DYCCC Yemen Grounds, Chang'ombe</p>
       </div>
     </div>
   </section>
 
-  <!-- Facility Features -->
-  <section class="section" style="background: var(--darker);">
+  <!-- Main Facility -->
+  <section class="section facilities-overview">
     <div class="container">
       <div class="section-title">
-        <h2>Facility <span>Features</span></h2>
+        <h2>Training <span>Grounds</span></h2>
         <div class="title-line"></div>
+        <p>Professional facilities for optimal player development</p>
       </div>
       
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-grass"></i>
+      <div class="facility-card">
+        <div class="facility-header">
+          <div class="facility-icon">
+            <i class="fas fa-futbol"></i>
           </div>
-          <h3>Professional Football Pitch</h3>
-          <p>Well-maintained grass pitch with proper markings for training sessions and matches.</p>
+          <div>
+            <h2>DYCCC Yemen Grounds</h2>
+            <p>Premier football facility in Dar es Salaam</p>
+          </div>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">
+        <div class="facility-content">
+          <h3>Professional Football Pitch</h3>
+          <p>Our home ground at DYCCC Yemen Grounds provides a professional training environment with well-maintained grass pitch, proper markings, and adequate space for all training activities.</p>
+          
+          <div class="facility-features">
+            <li><i class="fas fa-check"></i> <strong>Full-size football pitch</strong> - Proper dimensions for match play</li>
+            <li><i class="fas fa-check"></i> <strong>Well-maintained grass surface</strong> - Safe for training and matches</li>
+            <li><i class="fas fa-check"></i> <strong>Professional markings</strong> - Clear boundaries and penalty areas</li>
+            <li><i class="fas fa-check"></i> <strong>Adequate lighting</strong> - For evening training when needed</li>
+            <li><i class="fas fa-check"></i> <strong>Secure perimeter</strong> - Safe environment for young players</li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Map -->
+  <section class="section location-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Location & <span>Directions</span></h2>
+        <div class="title-line"></div>
+        <p>Easy access from all parts of Dar es Salaam</p>
+      </div>
+      
+      <div class="location-container">
+        <div class="map-placeholder">
+          <i class="fas fa-map-marked-alt"></i>
+          <h3>DYCCC Yemen Grounds</h3>
+          <p>Chang'ombe, Dar es Salaam</p>
+          <a href="https://maps.google.com/?q=DYCCC+Yemen+Grounds+Chang'ombe+Dar+es+Salaam" 
+             target="_blank" 
+             class="btn btn-secondary" 
+             style="margin-top: 20px;">
+            Open in Google Maps
+          </a>
+        </div>
+        
+        <div class="location-info">
+          <h3>How to Find Us</h3>
+          <ul class="location-details">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Address:</strong><br>
+                DYCCC Yemen Grounds, Chang'ombe<br>
+                Opposite DUCE University<br>
+                Dar es Salaam, Tanzania
+              </div>
+            </li>
+            
+            <li>
+              <i class="fas fa-bus"></i>
+              <div>
+                <strong>Public Transport:</strong><br>
+                Daladala Route 106 to Chang'ombe<br>
+                Stop at DUCE University, cross to Yemen Grounds
+              </div>
+            </li>
+            
+            <li>
+              <i class="fas fa-car"></i>
+              <div>
+                <strong>By Car:</strong><br>
+                From City Center → Nelson Mandela Road → Chang'ombe Road<br>
+                Look for DUCE University on your right, ground is opposite
+              </li>
+            </li>
+            
+            <li>
+              <i class="fas fa-parking"></i>
+              <div>
+                <strong>Parking:</strong><br>
+                Ample parking available on-site<br>
+                Secure parking area for parents
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Equipment -->
+  <section class="section equipment-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Training <span>Equipment</span></h2>
+        <div class="title-line"></div>
+        <p>Professional equipment provided for all training sessions</p>
+      </div>
+      
+      <div class="equipment-grid">
+        <div class="equipment-card">
+          <div class="equipment-icon">
+            <i class="fas fa-futbol"></i>
+          </div>
+          <h3>Quality Footballs</h3>
+          <p>Professional match balls and training balls suitable for all age groups</p>
+        </div>
+        
+        <div class="equipment-card">
+          <div class="equipment-icon">
+            <i class="fas fa-flag"></i>
+          </div>
+          <h3>Training Cones</h3>
+          <p>Brightly colored cones for drills, agility exercises, and boundary marking</p>
+        </div>
+        
+        <div class="equipment-card">
+          <div class="equipment-icon">
+            <i class="fas fa-vest"></i>
+          </div>
+          <h3>Training Bibs</h3>
+          <p>Color-coded bibs for team identification during practice matches</p>
+        </div>
+        
+        <div class="equipment-card">
+          <div class="equipment-icon">
             <i class="fas fa-dumbbell"></i>
           </div>
-          <h3>Modern Training Equipment</h3>
-          <p>Complete set of training equipment including cones, hurdles, ladders, and agility poles.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Safe Environment</h3>
-          <p>Secure training grounds with first aid facilities and certified safety protocols.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-tint"></i>
-          </div>
-          <h3>Hydration Stations</h3>
-          <p>Clean drinking water available throughout training sessions for player hydration.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-tshirt"></i>
-          </div>
-          <h3>Equipment Provided</h3>
-          <p>Training bibs, balls, and basic equipment provided for all sessions.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-user-md"></i>
-          </div>
-          <h3>Medical Support</h3>
-          <p>First aid trained staff and emergency medical protocols in place.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Facility <span>Gallery</span></h2>
-        <div class="title-line"></div>
-      </div>
-      
-      <div class="gallery-filter" style="margin-bottom: 40px;">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="pitch">Football Pitch</button>
-        <button class="filter-btn" data-filter="training">Training Sessions</button>
-        <button class="filter-btn" data-filter="equipment">Equipment</button>
-        <button class="filter-btn" data-filter="matches">Matches</button>
-      </div>
-      
-      <div class="gallery-grid">
-        <div class="gallery-item" data-category="pitch">
-          <img src="https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Football Pitch">
-          <div class="gallery-overlay">
-            <span>Professional Football Pitch</span>
-          </div>
-        </div>
-        
-        <div class="gallery-item" data-category="training">
-          <img src="https://images.unsplash.com/photo-1577223625818-75bc1f2ac0e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Training Session">
-          <div class="gallery-overlay">
-            <span>Group Training Session</span>
-          </div>
-        </div>
-        
-        <div class="gallery-item" data-category="equipment">
-          <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Training Equipment">
-          <div class="gallery-overlay">
-            <span>Modern Training Equipment</span>
-          </div>
-        </div>
-        
-        <div class="gallery-item" data-category="matches">
-          <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Competitive Match">
-          <div class="gallery-overlay">
-            <span>Competitive Matches</span>
-          </div>
-        </div>
-        
-        <div class="gallery-item" data-category="training">
-          <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Skill Development">
-          <div class="gallery-overlay">
-            <span>Skill Development</span>
-          </div>
-        </div>
-        
-        <div class="gallery-item" data-category="pitch">
-          <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Training Ground">
-          <div class="gallery-overlay">
-            <span>Training Ground Overview</span>
-          </div>
+          <h3>Agility Equipment</h3>
+          <p>Ladders, hurdles, and poles for speed and agility training</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Safety & Security -->
-  <section class="section" style="background: var(--darker);">
+  <section class="section safety-section">
     <div class="container">
-      <div class="content-grid">
-        <div class="content-image">
-          <img src="https://images.unsplash.com/photo-1584467735871-8db9ac8c51a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Safety First">
+      <div class="section-title">
+        <h2>Safety & <span>Security</span></h2>
+        <div class="title-line"></div>
+        <p>Your child's safety is our top priority</p>
+      </div>
+      
+      <div class="safety-grid">
+        <div class="safety-card">
+          <div class="safety-icon">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h3>Supervised Training</h3>
+          <p>All sessions supervised by qualified coaches and staff</p>
         </div>
         
-        <div class="content-text">
-          <h2>Safety & <span>Security</span></h2>
-          <p>At FirstLight Academy, the safety and well-being of our players is our top priority.</p>
-          
-          <div style="margin-top: 30px;">
-            <h4 style="color: var(--secondary); margin-bottom: 15px;">Safety Measures:</h4>
-            <ul style="list-style: none; color: rgba(255, 255, 255, 0.8);">
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-shield-alt" style="color: var(--secondary);"></i>
-                Secure, gated premises with controlled access
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-user-md" style="color: var(--secondary);"></i>
-                First aid trained staff available at all sessions
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-sun" style="color: var(--secondary);"></i>
-                Adequate hydration and sun protection protocols
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-ambulance" style="color: var(--secondary);"></i>
-                Emergency action plan and contacts
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-user-check" style="color: var(--secondary);"></i>
-                All coaches background checked and certified
-              </li>
-            </ul>
+        <div class="safety-card">
+          <div class="safety-icon">
+            <i class="fas fa-first-aid"></i>
+          </div>
+          <h3>First Aid Available</h3>
+          <p>Basic first aid kit and trained personnel on-site</p>
+        </div>
+        
+        <div class="safety-card">
+          <div class="safety-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Secure Facility</h3>
+          <p>Fenced perimeter and controlled access to training area</p>
+        </div>
+        
+        <div class="safety-card">
+          <div class="safety-icon">
+            <i class="fas fa-tint"></i>
+          </div>
+          <h3>Hydration Stations</h3>
+          <p>Regular water breaks and hydration monitoring</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transportation -->
+  <section class="section transport-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Transportation <span>Options</span></h2>
+        <div class="title-line"></div>
+        <p>Multiple ways to reach our training facility</p>
+      </div>
+      
+      <div class="transport-grid">
+        <div class="transport-card">
+          <div class="transport-icon">
+            <i class="fas fa-bus"></i>
+          </div>
+          <div>
+            <h3>Daladala (Public Bus)</h3>
+            <p>Route 106 directly to Chang'ombe. Get off at DUCE University stop.</p>
+          </div>
+        </div>
+        
+        <div class="transport-card">
+          <div class="transport-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <div>
+            <h3>Private Car</h3>
+            <p>Ample parking available on-site. Secure parking area for parents.</p>
+          </div>
+        </div>
+        
+        <div class="transport-card">
+          <div class="transport-icon">
+            <i class="fas fa-motorcycle"></i>
+          </div>
+          <div>
+            <h3>Boda-Boda</h3>
+            <p>Available from main road to the ground entrance.</p>
+          </div>
+        </div>
+        
+        <div class="transport-card">
+          <div class="transport-icon">
+            <i class="fas fa-walking"></i>
+          </div>
+          <div>
+            <h3>Walking</h3>
+            <p>Safe pedestrian access from surrounding neighborhoods.</p>
           </div>
         </div>
       </div>
@@ -310,15 +1033,11 @@
   </section>
 
   <!-- Call to Action -->
-  <section class="section cta-section">
+  <section class="section" style="background-color: var(--primary); color: white; text-align: center;">
     <div class="container">
-      <div class="cta-content">
-        <h2>Experience Our Facilities</h2>
-        <p style="margin-bottom: 40px;">Come see our professional training facilities and meet our coaching team.</p>
-        <a href="contact.html" class="btn btn-whatsapp" style="font-size: 1.3rem; padding: 18px 50px;">
-          <i class="fab fa-whatsapp"></i> Schedule a Visit
-        </a>
-      </div>
+      <h2 style="margin-bottom: 20px;">Experience Our Facilities Firsthand</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Join us for a free trial session and see our professional training facilities at DYCCC Yemen Grounds.</p>
+      <a href="contact.html#trial" class="btn btn-primary">Book Free Trial Session</a>
     </div>
   </section>
 
@@ -327,7 +1046,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <img src="assets/images/logo.png" alt="FirstLight Academy">
+          <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy">
           <p>Professional youth football academy in Dar es Salaam, developing the next generation of Tanzanian football talent.</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -345,41 +1064,108 @@
             <li><a href="programs.html">Programs</a></li>
             <li><a href="facilities.html">Facilities</a></li>
             <li><a href="coaches.html">Coaches</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="contact.html">Register Now</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-links">
-          <h4>Training Info</h4>
-          <ul>
-            <li><a href="programs.html">Training Programs</a></li>
-            <li><a href="schedule.html">Schedule & Pricing</a></li>
-            <li><a href="facilities.html">Training Facilities</a></li>
-            <li><a href="contact.html">Registration Process</a></li>
-            <li><a href="contact.html">FAQ</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
           <h4>Contact Info</h4>
-          <ul style="color: rgba(255, 255, 255, 0.7);">
-            <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i> DYCCC Yemen Grounds, Chang'ombe</li>
-            <li><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> +255 629 384 806</li>
-            <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i> info@firstlightacademy.co.tz</li>
-            <li><i class="far fa-clock" style="margin-right: 10px; color: var(--secondary);"></i> Sat-Sun: 15:30-17:30</li>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> DYCCC Yemen Grounds, Chang'ombe</li>
+            <li><i class="fas fa-phone"></i> +255 629 384 806</li>
+            <li><i class="fas fa-phone"></i> +255 714 463 006</li>
+            <li><i class="fas fa-envelope"></i> info@firstlightacademy.co.tz</li>
+            <li><i class="far fa-clock"></i> Sat-Sun: 15:30-17:30</li>
           </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Subscribe for updates on tournaments and training schedules.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email" required>
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2024 FirstLight Football Academy. All rights reserved. | Dar es Salaam, Tanzania</p>
-        <p style="margin-top: 10px;">Developing Tanzanian Football Talent</p>
+        <p>&copy; 2024 FirstLight Football Academy. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script>
+    // Mobile Navigation
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+    });
+    
+    mobileNavClose.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+    });
+    
+    // Close mobile nav when clicking a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+      });
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        if (email) {
+          alert('Thank you for subscribing to our newsletter!');
+          this.reset();
+        }
+      });
+    }
+    
+    // Set active navigation link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if ((currentPage === 'index.html' && linkHref === 'index.html') || 
+          (currentPage !== 'index.html' && linkHref === currentPage)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+    
+    // Mobile navigation active link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if ((currentPage === 'index.html' && linkHref === 'index.html') || 
+          (currentPage !== 'index.html' && linkHref === currentPage)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
