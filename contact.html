@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Registration | FirstLight Football Academy</title>
+  <meta name="description" content="Register for FirstLight Football Academy. Contact us for inquiries, free trial sessions, and enrollment information."/>
+  <meta name="keywords" content="football academy registration Tanzania, soccer training contact Dar es Salaam, youth football enrollment">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="FirstLight Academy Logo">
+          <div class="logo-text">
+            <h1>FirstLight Academy</h1>
+            <span>Football Excellence</span>
+          </div>
+        </a>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="programs.html">Programs</a>
+          <a href="facilities.html">Facilities</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="contact.html" class="active btn btn-secondary">Register Now</a>
+          
+          <!-- Language Toggle -->
+          <div class="language-toggle">
+            <button class="language-btn" id="languageBtn">
+              <i class="fas fa-globe"></i>
+              <span id="currentLanguage">English</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="language-dropdown" id="languageDropdown">
+              <div class="language-option active" data-lang="en">
+                <div class="language-flag flag-uk"></div>
+                English
+              </div>
+              <div class="language-option" data-lang="sw">
+                <div class="language-flag flag-tz"></div>
+                Kiswahili
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" id="mobileNavClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="coaches.html">Coaches</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="contact.html" class="active">Register</a>
+        
+        <!-- Language Toggle for Mobile -->
+        <div class="language-toggle" style="margin-left: 0;">
+          <button class="language-btn" id="mobileLanguageBtn">
+            <i class="fas fa-globe"></i>
+            <span id="mobileCurrentLanguage">English</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="language-dropdown" id="mobileLanguageDropdown">
+            <div class="language-option active" data-lang="en">
+              <div class="language-flag flag-uk"></div>
+              English
+            </div>
+            <div class="language-option" data-lang="sw">
+              <div class="language-flag flag-tz"></div>
+              Kiswahili
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="page-header-content">
+        <h1 data-translate="contactTitle">Contact & <span>Registration</span></h1>
+        <p data-translate="contactSubtitle">Join FirstLight Academy today. Register for training or schedule a free trial session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form Section -->
+  <section class="section registration-section" id="registration">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-translate="registerNow">Register <span>Now</span></h2>
+        <div class="title-line"></div>
+        <p data-translate="registrationDesc" style="max-width: 800px; margin: 20px auto 0; color: rgba(255, 255, 255, 0.8);">Fill out the registration form below to join our academy. Our team will contact you within 24 hours.</p>
+      </div>
+
+      <div class="registration-container">
+        <div class="registration-form-wrapper">
+          <form id="registrationForm" class="registration-form">
+            <div class="form-group">
+              <label for="playerName" data-translate="playerName">Player's Full Name *</label>
+              <input type="text" id="playerName" name="playerName" required data-translate-placeholder="enterPlayerName">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dateOfBirth" data-translate="dateOfBirth">Date of Birth *</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+              </div>
+              <div class="form-group">
+                <label for="ageGroup" data-translate="ageGroup">Age Group *</label>
+                <select id="ageGroup" name="ageGroup" required>
+                  <option value="" data-translate="selectAgeGroup">Select Age Group</option>
+                  <option value="U6" data-translate="u6Group">U6 (4-6 years)</option>
+                  <option value="U10" data-translate="u10Group">U10 (7-10 years)</option>
+                  <option value="U14" data-translate="u14Group">U14 (11-14 years)</option>
+                  <option value="U17" data-translate="u17Group">U17 (15-17 years)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="parentName" data-translate="parentName">Parent/Guardian Name *</label>
+              <input type="text" id="parentName" name="parentName" required data-translate-placeholder="enterParentName">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone" data-translate="phoneNumber">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required data-translate-placeholder="enterPhoneNumber">
+              </div>
+              <div class="form-group">
+                <label for="email" data-translate="emailAddress">Email Address</label>
+                <input type="email" id="email" name="email" data-translate-placeholder="enterEmailAddress">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="address" data-translate="residentialAddress">Residential Address *</label>
+              <input type="text" id="address" name="address" required data-translate-placeholder="enterAddress">
+            </div>
+
+            <div class="form-group">
+              <label for="school" data-translate="currentSchool">Current School *</label>
+              <input type="text" id="school" name="school" required data-translate-placeholder="enterSchoolName">
+            </div>
+
+            <div class="form-group">
+              <label for="experience" data-translate="footballExperience">Football Experience</label>
+              <textarea id="experience" name="experience" rows="3" data-translate-placeholder="describeExperience"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="medical" data-translate="medicalInfo">Medical Information</label>
+              <textarea id="medical" name="medical" rows="3" data-translate-placeholder="anyMedicalConditions"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="referral" data-translate="referralSource">How did you hear about us? *</label>
+              <select id="referral" name="referral" required>
+                <option value="" data-translate="selectSource">Select Source</option>
+                <option value="friend" data-translate="friendReferral">Friend/Family</option>
+                <option value="social" data-translate="socialMedia">Social Media</option>
+                <option value="school" data-translate="school">School</option>
+                <option value="website" data-translate="website">Website</option>
+                <option value="other" data-translate="otherSource">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="terms" name="terms" required>
+              <label for="terms" data-translate="agreeTerms">I agree to the terms and conditions of FirstLight Football Academy *</label>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="trial" name="trial">
+              <label for="trial" data-translate="freeTrial">I would like to schedule a FREE trial session</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" data-translate="submitRegistration">Submit Registration</button>
+          </form>
+        </div>
+
+        <div class="registration-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3 data-translate="freeTrialTitle">Free Trial Session</h3>
+            <p data-translate="trialDescription">Experience our training before committing. Book a free trial session this weekend.</p>
+            <a href="#trial" class="btn btn-secondary" data-translate="bookTrial">Book Trial</a>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-icon">
+              <i class="fas fa-question-circle"></i>
+            </div>
+            <h3 data-translate="needHelp">Need Help?</h3>
+            <p data-translate="helpDescription">Contact our registration team for assistance with the registration process.</p>
+            <div class="contact-methods">
+              <a href="tel:+255629384806" class="contact-link">
+                <i class="fas fa-phone"></i> +255 629 384 806
+              </a>
+              <a href="https://wa.me/255629384806" class="contact-link whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h3 data-translate="requiredDocs">Required Documents</h3>
+            <ul class="documents-list">
+              <li data-translate="doc1"><i class="fas fa-check"></i> Birth Certificate Copy</li>
+              <li data-translate="doc2"><i class="fas fa-check"></i> 2 Passport Photos</li>
+              <li data-translate="doc3"><i class="fas fa-check"></i> Medical Certificate</li>
+              <li data-translate="doc4"><i class="fas fa-check"></i> School Report Copy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Trial Section -->
+  <section class="section trial-section" id="trial">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-translate="freeTrialSession">Free <span>Trial Session</span></h2>
+        <div class="title-line"></div>
+        <p data-translate="trialSessionDesc" style="max-width: 800px; margin: 20px auto 0; color: rgba(255, 255, 255, 0.8);">Try our training sessions before committing. No obligation, just come and play!</p>
+      </div>
+
+      <div class="trial-container">
+        <div class="trial-info">
+          <div class="trial-features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div class="feature-content">
+                <h4 data-translate="trialSchedule">Trial Schedule</h4>
+                <p data-translate="trialDays">Every Saturday & Sunday</p>
+                <p data-translate="trialTimes">Morning: 7:30-9:30 AM | Afternoon: 3:30-5:30 PM</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="feature-content">
+                <h4 data-translate="trialLocation">Location</h4>
+                <p data-translate="locationAddress">DYCCC Yemen Grounds, Chang'ombe</p>
+                <p data-translate="locationNote">Opposite DUCE University</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-clipboard-list"></i>
+              </div>
+              <div class="feature-content">
+                <h4 data-translate="whatToBring">What to Bring</h4>
+                <ul>
+                  <li data-translate="bring1">Sports clothing & cleats</li>
+                  <li data-translate="bring2">Water bottle</li>
+                  <li data-translate="bring3">Sun protection</li>
+                  <li data-translate="bring4">Energy & enthusiasm!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="trial-booking">
+            <h3 data-translate="bookTrialNow">Book Your Trial Now</h3>
+            <form id="trialForm" class="trial-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" placeholder="Your Name" data-translate-placeholder="yourName" required>
+                </div>
+                <div class="form-group">
+                  <input type="tel" placeholder="Phone Number" data-translate-placeholder="yourPhone" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="date" placeholder="Preferred Date" required>
+                </div>
+                <div class="form-group">
+                  <select required>
+                    <option value="" data-translate="selectSession">Select Session</option>
+                    <option value="morning" data-translate="morningSession">Morning (7:30-9:30 AM)</option>
+                    <option value="afternoon" data-translate="afternoonSession">Afternoon (3:30-5:30 PM)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <select required>
+                  <option value="" data-translate="selectAgeGroup">Select Age Group</option>
+                  <option value="U6" data-translate="u6Group">U6 (4-6 years)</option>
+                  <option value="U10" data-translate="u10Group">U10 (7-10 years)</option>
+                  <option value="U14" data-translate="u14Group">U14 (11-14 years)</option>
+                  <option value="U17" data-translate="u17Group">U17 (15-17 years)</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" data-translate="bookNow">Book Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information Section -->
+  <section class="section contact-info-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-translate="contactInformation">Contact <span>Information</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3 data-translate="visitUs">Visit Us</h3>
+          <p data-translate="academyAddress">DYCCC Yemen Grounds, Chang'ombe</p>
+          <p data-translate="addressDetail">Opposite DUCE University, Dar es Salaam</p>
+          <a href="https://maps.google.com/?q=DYCCC+Yemen+Grounds+Chang'ombe+Dar+es+Salaam" target="_blank" class="contact-link" data-translate="viewMap">View on Map</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3 data-translate="callUs">Call Us</h3>
+          <p>+255 629 384 806</p>
+          <p>+255 714 463 006</p>
+          <p data-translate="callHours">Mon-Sat: 8:00 AM - 6:00 PM</p>
+          <a href="tel:+255629384806" class="contact-link" data-translate="callNow">Call Now</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 data-translate="emailUs">Email Us</h3>
+          <p>info@firstlightacademy.co.tz</p>
+          <p>registrations@firstlightacademy.co.tz</p>
+          <p data-translate="responseTime">Response within 24 hours</p>
+          <a href="mailto:info@firstlightacademy.co.tz" class="contact-link" data-translate="sendEmail">Send Email</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3 data-translate="whatsapp">WhatsApp</h3>
+          <p data-translate="whatsappDesc">Quick registration & inquiries</p>
+          <p data-translate="whatsappHours">24/7 messaging available</p>
+          <a href="https://wa.me/255629384806?text=Hello!%20I%20want%20to%20join%20FirstLight%20Academy" target="_blank" class="contact-link whatsapp" data-translate="messageUs">Message Us</a>
+        </div>
+      </div>
+
+      <!-- Office Hours -->
+      <div class="office-hours">
+        <h3 data-translate="officeHours">Office Hours</h3>
+        <div class="hours-grid">
+          <div class="hours-day">
+            <span data-translate="monday">Monday - Friday</span>
+            <span>8:00 AM - 6:00 PM</span>
+          </div>
+          <div class="hours-day">
+            <span data-translate="saturday">Saturday</span>
+            <span>7:00 AM - 5:00 PM</span>
+          </div>
+          <div class="hours-day">
+            <span data-translate="sunday">Sunday</span>
+            <span>7:00 AM - 5:00 PM</span>
+          </div>
+          <div class="hours-day">
+            <span data-translate="publicHolidays">Public Holidays</span>
+            <span data-translate="closed">Closed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="container">
+      <div class="map-container">
+        <h3 data-translate="findUs">Find Us Here</h3>
+        <div class="map-placeholder">
+          <div class="map-content">
+            <i class="fas fa-map-marked-alt"></i>
+            <h4 data-translate="locationMap">Location Map</h4>
+            <p data-translate="mapDescription">DYCCC Yemen Grounds, Chang'ombe<br>Opposite DUCE University</p>
+            <a href="https://maps.google.com/?q=DYCCC+Yemen+Grounds+Chang'ombe+Dar+es+Salaam" target="_blank" class="btn btn-secondary" data-translate="openMap">Open in Google Maps</a>
+          </div>
+        </div>
+        <div class="transport-info">
+          <h4 data-translate="transportation">Transportation</h4>
+          <div class="transport-options">
+            <div class="transport-option">
+              <i class="fas fa-bus"></i>
+              <span data-translate="daladala">Daladala: Route 106 to Chang'ombe</span>
+            </div>
+            <div class="transport-option">
+              <i class="fas fa-car"></i>
+              <span data-translate="parking">Ample parking available on-site</span>
+            </div>
+            <div class="transport-option">
+              <i class="fas fa-biking"></i>
+              <span data-translate="boda">Boda-boda available from main road</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-translate="faqTitle">Frequently Asked <span>Questions</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3 data-translate="faq1">What age groups do you accept?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq1Answer">We accept players from 4 to 17 years old, divided into four age groups: U6 (4-6), U10 (7-10), U14 (11-14), and U17 (15-17).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3 data-translate="faq2">What are the training days and times?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq2Answer">Training is every Saturday and Sunday. Morning sessions: 7:30-9:30 AM, Afternoon sessions: 3:30-5:30 PM. See our Schedule page for details.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3 data-translate="faq3">What documents are required for registration?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq3Answer">Required documents: 1) Birth certificate copy, 2) 2 passport photos, 3) Medical certificate, 4) School report copy.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3 data-translate="faq4">Do you offer trial sessions?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq4Answer">Yes! We offer FREE trial sessions every weekend. You can book a trial through our website or by calling/WhatsApping us.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3 data-translate="faq5">What is included in the monthly fee?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq5Answer">Monthly fee includes: Professional coaching, training equipment, facility usage, and tournament participation. Training kit is purchased separately.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3 data-translate="faq6">What payment methods do you accept?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq6Answer">We accept mobile money (M-Pesa, Tigo Pesa), bank transfer (CRDB, NMB), and cash payments at our office.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/images/logo.png" alt="FirstLight Academy">
+          <p data-translate="footerDesc">Professional youth football academy in Dar es Salaam, developing the next generation of Tanzanian football talent.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-translate="quickLinks">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-translate="home">Home</a></li>
+            <li><a href="about.html" data-translate="about">About Us</a></li>
+            <li><a href="programs.html" data-translate="programs">Programs</a></li>
+            <li><a href="schedule.html" data-translate="schedule">Schedule</a></li>
+            <li><a href="coaches.html" data-translate="coaches">Coaches</a></li>
+            <li><a href="contact.html" data-translate="contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-translate="contactInfo">Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> <span data-translate="address">DYCCC Yemen Grounds, Chang'ombe</span></li>
+            <li><i class="fas fa-phone"></i> +255 629 384 806</li>
+            <li><i class="fas fa-envelope"></i> info@firstlightacademy.co.tz</li>
+            <li><i class="far fa-clock"></i> <span data-translate="hours">Sat-Sun: 7:30AM-5:30PM</span></li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h4 data-translate="newsletter">Newsletter</h4>
+          <p data-translate="newsletterDesc">Subscribe for updates on tournaments and training schedules.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email" data-translate-placeholder="emailPlaceholder">
+            <button type="submit" data-translate="subscribe">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p data-translate="copyright">&copy; 2024 FirstLight Football Academy. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" data-translate="privacy">Privacy Policy</a>
+          <a href="#" data-translate="terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize page-specific functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Form submission handling
+      const registrationForm = document.getElementById('registrationForm');
+      if (registrationForm) {
+        registrationForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          // In a real application, you would send this data to a server
+          alert(currentLang === 'en' 
+            ? 'Registration submitted successfully! We will contact you within 24 hours.'
+            : 'Usajili umewasilishwa kikamilifu! Tutawasiliana nawe ndani ya masaa 24.'
+          );
+          this.reset();
+        });
+      }
+
+      // Trial form submission
+      const trialForm = document.getElementById('trialForm');
+      if (trialForm) {
+        trialForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert(currentLang === 'en'
+            ? 'Trial session booked! See you on the pitch.'
+            : 'Kipindi cha majaribio kimepangwa! Tutaonana uwanjani.'
+          );
+          this.reset();
+        });
+      }
+
+      // FAQ accordion functionality
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          const icon = question.querySelector('i');
+          
+          // Close other answers
+          document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+            if (otherAnswer !== answer && otherAnswer.style.maxHeight) {
+              otherAnswer.style.maxHeight = null;
+              otherAnswer.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+              otherAnswer.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+            }
+          });
+
+          // Toggle current answer
+          if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+          }
+        });
+      });
+
+      // Initialize all FAQ answers as closed
+      document.querySelectorAll('.faq-answer').forEach(answer => {
+        answer.style.maxHeight = null;
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href !== '#') {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+
+      // Newsletter form submission
+      const newsletterForm = document.querySelector('.newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          if (email) {
+            alert(currentLang === 'en' 
+              ? 'Thank you for subscribing to our newsletter!'
+              : 'Asante kwa kujiandikisha kwa jarida letu!'
+            );
+            this.reset();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
