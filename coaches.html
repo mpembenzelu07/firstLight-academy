@@ -3,13 +3,633 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Coaching Team | Certified Professionals</title>
-  <meta name="description" content="Meet our certified coaching team at FirstLight Academy. CAF licensed professionals dedicated to youth development."/>
-  <meta name="keywords" content="football coaches Tanzania, certified coaches, youth football coaching Dar es Salaam">
-  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <title>Our Coaches | FirstLight Football Academy | Professional Coaching Team</title>
+  <meta name="description" content="Meet our professional coaching team at FirstLight Football Academy. CAF and FIFA licensed coaches with extensive youth development experience."/>
+  <link rel="icon" href="/firstLight-academy/images/logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root {
+      --primary: #0A2463;
+      --secondary: #FF6B35;
+      --light: #f8f9fa;
+      --dark: #1e1e24;
+      --text-dark: #333;
+      --text-light: #fff;
+      --gray: #6c757d;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--light);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary);
+      color: var(--text-light);
+    }
+
+    .btn-primary:hover {
+      background-color: #e55a2b;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background-color: var(--primary);
+      color: var(--text-light);
+    }
+
+    .btn-secondary:hover {
+      background-color: #081F4E;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2 span {
+      color: var(--secondary);
+    }
+
+    .title-line {
+      height: 4px;
+      width: 80px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      margin: 0 auto 20px;
+      border-radius: 2px;
+    }
+
+    /* Header & Navigation - Same as Homepage */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    #header.scrolled {
+      padding: 10px 0;
+      background-color: rgba(255, 255, 255, 0.98);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    .logo-text h1 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+
+    .logo-text span {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--dark);
+      position: relative;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--secondary);
+      border-radius: 2px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.9)), 
+                  url('/firstLight-academy/images/u14.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--text-light);
+      padding: 180px 0 100px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .page-header-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .page-header-content h1 span {
+      color: var(--secondary);
+    }
+
+    .page-header-content p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Coaches Grid */
+    .coaches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .coach-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .coach-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .coach-image {
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .coach-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .coach-card:hover .coach-image img {
+      transform: scale(1.05);
+    }
+
+    .coach-info {
+      padding: 30px;
+    }
+
+    .coach-name {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .coach-role {
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .coach-qualifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .qualification {
+      background: rgba(10, 36, 99, 0.1);
+      color: var(--primary);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Coaching Philosophy */
+    .philosophy-section {
+      background-color: var(--primary);
+      color: var(--text-light);
+    }
+
+    .philosophy-section .section-title h2,
+    .philosophy-section .section-title p {
+      color: var(--text-light);
+    }
+
+    .philosophy-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .philosophy-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .philosophy-point {
+      text-align: center;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .philosophy-point i {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    /* Specialized Coaching */
+    .specialization-section {
+      background-color: var(--light);
+    }
+
+    .specialization-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .specialization-card {
+      text-align: center;
+      padding: 40px 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .specialization-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(10, 36, 99, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+    }
+
+    .specialization-icon i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    /* Footer - Same as Homepage */
+    footer {
+      background-color: var(--dark);
+      color: var(--text-light);
+      padding: 80px 0 30px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-logo img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      color: white;
+    }
+
+    .social-links a:hover {
+      background-color: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    .footer-links h4 {
+      color: var(--text-light);
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-links h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+
+    .footer-links ul li {
+      margin-bottom: 15px;
+    }
+
+    .footer-links ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .footer-links ul li a:hover {
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+
+    .footer-links ul li i {
+      margin-right: 10px;
+      color: var(--secondary);
+      width: 20px;
+    }
+
+    .footer-newsletter p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .newsletter-form input {
+      padding: 15px;
+      border-radius: 5px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-light);
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .newsletter-form button {
+      padding: 15px;
+      background-color: var(--secondary);
+      color: var(--text-light);
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+      background-color: #E55A2B;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-bottom p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .page-header-content h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0;
+      }
+      
+      .page-header {
+        padding: 150px 0 80px;
+      }
+      
+      .page-header-content h1 {
+        font-size: 2rem;
+      }
+      
+      .page-header-content p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .coach-image {
+        height: 250px;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .footer-bottom-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-header-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .coach-card {
+        margin-bottom: 30px;
+      }
+      
+      .coach-info {
+        padding: 20px;
+      }
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100%;
+      background: var(--dark);
+      padding: 100px 30px 30px;
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .mobile-nav .nav-links a {
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .mobile-nav .btn {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <!-- Header & Navigation -->
@@ -17,7 +637,7 @@
     <div class="container">
       <nav class="navbar">
         <a href="index.html" class="logo">
-          <img src="assets/images/logo.png" alt="FirstLight Academy Logo">
+          <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy Logo">
           <div class="logo-text">
             <h1>FirstLight Academy</h1>
             <span>Football Excellence</span>
@@ -32,25 +652,6 @@
           <a href="coaches.html" class="active">Coaches</a>
           <a href="schedule.html">Schedule</a>
           <a href="contact.html" class="btn btn-secondary">Register Now</a>
-          
-          <!-- Language Toggle -->
-          <div class="language-toggle">
-            <button class="language-btn" id="languageBtn">
-              <i class="fas fa-globe"></i>
-              <span id="currentLanguage">English</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="language-dropdown" id="languageDropdown">
-              <div class="language-option active" data-lang="en">
-                <div class="language-flag flag-uk"></div>
-                English
-              </div>
-              <div class="language-option" data-lang="sw">
-                <div class="language-flag flag-tz"></div>
-                Kiswahili
-              </div>
-            </div>
-          </div>
         </div>
         
         <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -58,314 +659,241 @@
         </button>
       </nav>
     </div>
-    
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobileNav">
-      <button class="mobile-nav-close" id="mobileNavClose">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="programs.html">Programs</a>
-        <a href="facilities.html">Facilities</a>
-        <a href="coaches.html" class="active">Coaches</a>
-        <a href="schedule.html">Schedule</a>
-        <a href="contact.html">Register</a>
-        
-        <!-- Language Toggle for Mobile -->
-        <div class="language-toggle" style="margin-left: 0;">
-          <button class="language-btn" id="mobileLanguageBtn">
-            <i class="fas fa-globe"></i>
-            <span id="mobileCurrentLanguage">English</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="language-dropdown" id="mobileLanguageDropdown">
-            <div class="language-option active" data-lang="en">
-              <div class="language-flag flag-uk"></div>
-              English
-            </div>
-            <div class="language-option" data-lang="sw">
-              <div class="language-flag flag-tz"></div>
-              Kiswahili
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="programs.html">Programs</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="coaches.html" class="active">Coaches</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="contact.html" class="btn btn-secondary">Register</a>
+    </div>
+  </div>
 
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1 data-translate="coachesTitle">Our <span>Coaching Team</span></h1>
-      <p data-translate="coachesSubtitle">Certified professionals dedicated to youth development</p>
+      <div class="page-header-content">
+        <h1>Meet Our <span>Coaching Team</span></h1>
+        <p>Professional coaches dedicated to developing Tanzania's next generation of football talent</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaches Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our <span>Coaches</span></h2>
+        <div class="title-line"></div>
+        <p>CAF and FIFA licensed coaches with extensive youth development experience</p>
+      </div>
+      
+      <div class="coaches-grid">
+        <!-- Coach Emmanuel -->
+        <div class="coach-card">
+          <div class="coach-image">
+            <img src="/firstLight-academy/images/u14.jpg" alt="Coach Emmanuel">
+          </div>
+          <div class="coach-info">
+            <h3 class="coach-name">Coach Emmanuel</h3>
+            <div class="coach-role">Head Coach & Technical Director</div>
+            <p>CAF Licensed coach with years of experience in youth development. Specializes in technical skills and tactical understanding.</p>
+            <div class="coach-qualifications">
+              <span class="qualification">CAF License</span>
+              <span class="qualification">10+ Years Experience</span>
+              <span class="qualification">Youth Development</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach Zabro -->
+        <div class="coach-card">
+          <div class="coach-image">
+            <img src="/firstLight-academy/images/gk1.jpg" alt="Coach Zabro">
+          </div>
+          <div class="coach-info">
+            <h3 class="coach-name">Coach Zabro</h3>
+            <div class="coach-role">Goalkeeper Coach</div>
+            <p>Specialized goalkeeper training expert with professional experience. Focuses on goalkeeper-specific techniques and positioning.</p>
+            <div class="coach-qualifications">
+              <span class="qualification">Goalkeeping Specialist</span>
+              <span class="qualification">Professional Experience</span>
+              <span class="qualification">CAF Licensed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach Eliud -->
+        <div class="coach-card">
+          <div class="coach-image">
+            <img src="/firstLight-academy/images/u10.jpg" alt="Coach Eliud">
+          </div>
+          <div class="coach-info">
+            <h3 class="coach-name">Coach Eliud</h3>
+            <div class="coach-role">Fitness & Conditioning Coach</div>
+            <p>Sports science graduate specializing in youth athletic development, injury prevention, and fitness training.</p>
+            <div class="coach-qualifications">
+              <span class="qualification">Sports Science Degree</span>
+              <span class="qualification">Fitness Specialist</span>
+              <span class="qualification">Injury Prevention</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach Christian -->
+        <div class="coach-card">
+          <div class="coach-image">
+            <img src="/firstLight-academy/images/u6.jpg" alt="Coach Christian">
+          </div>
+          <div class="coach-info">
+            <h3 class="coach-name">Coach Christian</h3>
+            <div class="coach-role">Assistant Coach</div>
+            <p>Focus on Under 10 building fundamental skills and basic tactics. Expert in youth engagement and skill development.</p>
+            <div class="coach-qualifications">
+              <span class="qualification">Youth Development</span>
+              <span class="qualification">Skills Training</span>
+              <span class="qualification">CAF Licensed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach Kelvin -->
+        <div class="coach-card">
+          <div class="coach-image">
+            <img src="/firstLight-academy/images/gk2.jpg" alt="Coach Kelvin">
+          </div>
+          <div class="coach-info">
+            <h3 class="coach-name">Coach Kelvin</h3>
+            <div class="coach-role">Assistant Coach</div>
+            <p>Junior development specialist with a focus on creating engaging training sessions for young players.</p>
+            <div class="coach-qualifications">
+              <span class="qualification">Junior Development</span>
+              <span class="qualification">Engagement Expert</span>
+              <span class="qualification">CAF Licensed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach Ibrahim -->
+        <div class="coach-card">
+          <div class="coach-image">
+            <img src="/firstLight-academy/images/gk3.jpg" alt="Coach Ibrahim">
+          </div>
+          <div class="coach-info">
+            <h3 class="coach-name">Coach Ibrahim</h3>
+            <div class="coach-role">Junior Development Coach</div>
+            <p>Specializes in Under 6 - Under 10 age groups with a focus on fun and fundamentals. Creates positive football experiences.</p>
+            <div class="coach-qualifications">
+              <span class="qualification">Early Years Specialist</span>
+              <span class="qualification">Fun-based Learning</span>
+              <span class="qualification">Youth Engagement</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Coaching Philosophy -->
-  <section class="section">
+  <section class="section philosophy-section">
     <div class="container">
-      <div class="content-grid">
-        <div class="content-text">
-          <h2>Our <span>Coaching Philosophy</span></h2>
-          <p>At FirstLight Academy, we believe in a player-centered approach that focuses on individual development within a positive team environment.</p>
-          
-          <div style="margin-top: 30px;">
-            <h4 style="color: var(--secondary); margin-bottom: 15px;">Core Principles:</h4>
-            <ul style="list-style: none; color: rgba(255, 255, 255, 0.8);">
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-user-graduate" style="color: var(--secondary);"></i>
-                <strong>Holistic Development:</strong> Focus on technical, tactical, physical, and mental growth
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-heart" style="color: var(--secondary);"></i>
-                <strong>Positive Environment:</strong> Creating a safe space where players can express themselves
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-chart-line" style="color: var(--secondary);"></i>
-                <strong>Individual Attention:</strong> Personalized feedback and development plans
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-trophy" style="color: var(--secondary);"></i>
-                <strong>Excellence Focus:</strong> Striving for improvement in every session
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-users" style="color: var(--secondary);"></i>
-                <strong>Team Unity:</strong> Building strong team bonds and sportsmanship
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div class="section-title">
+        <h2>Coaching <span>Philosophy</span></h2>
+        <div class="title-line"></div>
+        <p>Our approach to player development</p>
+      </div>
+      
+      <div class="philosophy-content">
+        <p>At FirstLight Academy, we believe in a holistic approach to player development that goes beyond just football skills. Our coaching philosophy is built on four key pillars that guide everything we do.</p>
         
-        <div class="content-image">
-          <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Coaching Philosophy">
+        <div class="philosophy-points">
+          <div class="philosophy-point">
+            <i class="fas fa-user-graduate"></i>
+            <h3>Technical Excellence</h3>
+            <p>Developing strong technical foundations through progressive skill-building exercises</p>
+          </div>
+          
+          <div class="philosophy-point">
+            <i class="fas fa-heart"></i>
+            <h3>Character Building</h3>
+            <p>Instilling values of discipline, respect, teamwork, and sportsmanship</p>
+          </div>
+          
+          <div class="philosophy-point">
+            <i class="fas fa-users"></i>
+            <h3>Team Development</h3>
+            <p>Creating cohesive team units that work together towards common goals</p>
+          </div>
+          
+          <div class="philosophy-point">
+            <i class="fas fa-chart-line"></i>
+            <h3>Progressive Learning</h3>
+            <p>Age-appropriate training that builds skills progressively over time</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Coaches Team -->
-  <section class="section" style="background: var(--darker);">
+  <!-- Specialized Coaching -->
+  <section class="section specialization-section">
     <div class="container">
       <div class="section-title">
-        <h2>Meet Our <span>Coaches</span></h2>
+        <h2>Specialized <span>Training</span></h2>
         <div class="title-line"></div>
+        <p>Comprehensive coaching for all aspects of the game</p>
       </div>
       
-      <div class="coaches-grid">
-        <div class="coach-card">
-          <div class="coach-img" style="background: linear-gradient(135deg, #0066cc, #004d99);">
-            <i class="fas fa-user-tie"></i>
+      <div class="specialization-grid">
+        <div class="specialization-card">
+          <div class="specialization-icon">
+            <i class="fas fa-futbol"></i>
           </div>
-          <div class="coach-info">
-            <h4>Coach Emmanuel</h4>
-            <div class="coach-role">Head Coach & Technical Director</div>
-            <p>CAF 'B' License with 8 years experience in youth development. Former professional player with extensive coaching credentials.</p>
-            <div style="margin-top: 15px; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
-              <p><i class="fas fa-graduation-cap"></i> CAF 'B' License</p>
-              <p><i class="fas fa-clock"></i> 8+ Years Experience</p>
-              <p><i class="fas fa-futbol"></i> Specializes: U14-U17 Development</p>
-            </div>
-          </div>
+          <h3>Technical Skills</h3>
+          <p>Ball control, passing accuracy, shooting technique, and dribbling skills development</p>
         </div>
         
-        <div class="coach-card">
-          <div class="coach-img" style="background: linear-gradient(135deg, #00cc88, #00aa66);">
-            <i class="fas fa-user-graduate"></i>
+        <div class="specialization-card">
+          <div class="specialization-icon">
+            <i class="fas fa-chess"></i>
           </div>
-          <div class="coach-info">
-            <h4>Coach Christian</h4>
-            <div class="coach-role">Assistant Coach & U10 Specialist</div>
-            <p>CAF 'C' License holder with 5 years specializing in youth development. Focus on skill acquisition and tactical understanding.</p>
-            <div style="margin-top: 15px; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
-              <p><i class="fas fa-graduation-cap"></i> CAF 'C' License</p>
-              <p><i class="fas fa-clock"></i> 5+ Years Experience</p>
-              <p><i class="fas fa-futbol"></i> Specializes: U8-U12 Development</p>
-            </div>
-          </div>
+          <h3>Tactical Training</h3>
+          <p>Game understanding, positional play, and decision making development</p>
         </div>
         
-        <div class="coach-card">
-          <div class="coach-img" style="background: linear-gradient(135deg, #ff6600, #cc5200);">
-            <i class="fas fa-user-friends"></i>
+        <div class="specialization-card">
+          <div class="specialization-icon">
+            <i class="fas fa-dumbbell"></i>
           </div>
-          <div class="coach-info">
-            <h4>Coach Ibrahim</h4>
-            <div class="coach-role">Junior Development Coach</div>
-            <p>Youth coaching specialist with 4 years experience in early football development. Focus on fun-based learning and motor skills.</p>
-            <div style="margin-top: 15px; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
-              <p><i class="fas fa-graduation-cap"></i> Youth Coaching Certificate</p>
-              <p><i class="fas fa-clock"></i> 4+ Years Experience</p>
-              <p><i class="fas fa-futbol"></i> Specializes: U6-U10 Development</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="coaches-grid" style="margin-top: 40px;">
-        <div class="coach-card">
-          <div class="coach-img" style="background: linear-gradient(135deg, #8a2be2, #6a1fc9);">
-            <i class="fas fa-running"></i>
-          </div>
-          <div class="coach-info">
-            <h4>Coach Michael</h4>
-            <div class="coach-role">Fitness & Conditioning Coach</div>
-            <p>Sports Science graduate specializing in youth athletic development, injury prevention, and age-appropriate conditioning.</p>
-            <div style="margin-top: 15px; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
-              <p><i class="fas fa-graduation-cap"></i> BSc Sports Science</p>
-              <p><i class="fas fa-clock"></i> 3+ Years Experience</p>
-              <p><i class="fas fa-futbol"></i> Specializes: Physical Development</p>
-            </div>
-          </div>
+          <h3>Physical Development</h3>
+          <p>Speed, agility, strength, and endurance training for football performance</p>
         </div>
         
-        <div class="coach-card">
-          <div class="coach-img" style="background: linear-gradient(135deg, #ff4757, #cc3946);">
-            <i class="fas fa-hands-helping"></i>
-          </div>
-          <div class="coach-info">
-            <h4>Coach Sarah</h4>
-            <div class="coach-role">Goalkeeping Coach</div>
-            <p>Former professional goalkeeper with CAF Goalkeeping License. Specializes in goalkeeper development from beginner to advanced.</p>
-            <div style="margin-top: 15px; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
-              <p><i class="fas fa-graduation-cap"></i> CAF Goalkeeping License</p>
-              <p><i class="fas fa-clock"></i> 6+ Years Experience</p>
-              <p><i class="fas fa-futbol"></i> Specializes: Goalkeeper Training</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="coach-card">
-          <div class="coach-img" style="background: linear-gradient(135deg, #00ced1, #00a5a8);">
+        <div class="specialization-card">
+          <div class="specialization-icon">
             <i class="fas fa-brain"></i>
           </div>
-          <div class="coach-info">
-            <h4>Coach David</h4>
-            <div class="coach-role">Mental Skills Coach</div>
-            <p>Sports Psychology specialist focusing on confidence building, concentration, and mental toughness for young athletes.</p>
-            <div style="margin-top: 15px; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
-              <p><i class="fas fa-graduation-cap"></i> MSc Sports Psychology</p>
-              <p><i class="fas fa-clock"></i> 4+ Years Experience</p>
-              <p><i class="fas fa-futbol"></i> Specializes: Mental Development</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Coaching Certifications -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Coaching <span>Certifications</span></h2>
-        <div class="title-line"></div>
-      </div>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-award"></i>
-          </div>
-          <h3>CAF Licensed</h3>
-          <p>All head coaches hold CAF coaching licenses with regular certification updates.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-user-shield"></i>
-          </div>
-          <h3>Background Checked</h3>
-          <p>Complete background checks and child protection certification for all staff.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <h3>Continuous Development</h3>
-          <p>Regular coaching workshops and professional development programs.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-medkit"></i>
-          </div>
-          <h3>First Aid Certified</h3>
-          <p>All coaches certified in first aid, CPR, and emergency response procedures.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section" style="background: var(--darker);">
-    <div class="container">
-      <div class="section-title">
-        <h2>Parent <span>Testimonials</span></h2>
-        <div class="title-line"></div>
-      </div>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="testimonial-content">
-            "Coach Emmanuel's dedication to my son's development has been incredible. His patience and expertise have transformed not just his football skills, but his confidence too."
-            <div class="testimonial-author" style="margin-top: 20px; justify-content: center;">
-              <div class="author-img" style="width: 40px; height: 40px; font-size: 1rem;">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="author-info">
-                <h5 style="font-size: 1rem;">Mr. Alex</h5>
-                <span style="font-size: 0.8rem;">Parent of U14 Player</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="feature-card">
-          <div class="testimonial-content">
-            "The coaching team's attention to detail and positive approach has made football the highlight of my daughter's week. She's grown so much in just 6 months."
-            <div class="testimonial-author" style="margin-top: 20px; justify-content: center;">
-              <div class="author-img" style="width: 40px; height: 40px; font-size: 1rem;">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="author-info">
-                <h5 style="font-size: 1rem;">Mrs. Sarah</h5>
-                <span style="font-size: 0.8rem;">Parent of U10 Player</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="feature-card">
-          <div class="testimonial-content">
-            "Professional, knowledgeable, and genuinely caring coaches. They create an environment where kids love to learn and improve."
-            <div class="testimonial-author" style="margin-top: 20px; justify-content: center;">
-              <div class="author-img" style="width: 40px; height: 40px; font-size: 1rem;">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="author-info">
-                <h5 style="font-size: 1rem;">Mr. James</h5>
-                <span style="font-size: 0.8rem;">Parent of U6 & U10 Players</span>
-              </div>
-            </div>
-          </div>
+          <h3>Mental Preparation</h3>
+          <p>Focus, confidence, resilience, and game intelligence development</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Call to Action -->
-  <section class="section cta-section">
+  <section class="section" style="background-color: var(--primary); color: white; text-align: center;">
     <div class="container">
-      <div class="cta-content">
-        <h2>Train With Professional Coaches</h2>
-        <p style="margin-bottom: 40px;">Join FirstLight Academy and benefit from our certified coaching team's expertise.</p>
-        <a href="contact.html" class="btn btn-whatsapp" style="font-size: 1.3rem; padding: 18px 50px;">
-          <i class="fab fa-whatsapp"></i> Contact Our Coaches
-        </a>
-      </div>
+      <h2 style="margin-bottom: 20px;">Learn from Professional Coaches</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Experience professional coaching at FirstLight Academy. Join us for a free trial session and meet our coaching team.</p>
+      <a href="contact.html#trial" class="btn btn-primary">Book Free Trial Session</a>
     </div>
   </section>
 
@@ -374,7 +902,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <img src="assets/images/logo.png" alt="FirstLight Academy">
+          <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy">
           <p>Professional youth football academy in Dar es Salaam, developing the next generation of Tanzanian football talent.</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -392,172 +920,108 @@
             <li><a href="programs.html">Programs</a></li>
             <li><a href="facilities.html">Facilities</a></li>
             <li><a href="coaches.html">Coaches</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="contact.html">Register Now</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-links">
-          <h4>Training Info</h4>
-          <ul>
-            <li><a href="programs.html">Training Programs</a></li>
-            <li><a href="schedule.html">Schedule & Pricing</a></li>
-            <li><a href="facilities.html">Training Facilities</a></li>
-            <li><a href="contact.html">Registration Process</a></li>
-            <li><a href="contact.html">FAQ</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
           <h4>Contact Info</h4>
-          <ul style="color: rgba(255, 255, 255, 0.7);">
-            <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i> DYCCC Yemen Grounds, Chang'ombe</li>
-            <li><i class="fas fa-phone" style="margin-right:             <i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> +255 789 456 123</li>
-            <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i> info@firstlightacademy.co.tz</li>
-            <li><i class="fas fa-clock" style="margin-right: 10px; color: var(--secondary);"></i> Mon-Sat: 3:00 PM - 7:00 PM</li>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> DYCCC Yemen Grounds, Chang'ombe</li>
+            <li><i class="fas fa-phone"></i> +255 629 384 806</li>
+            <li><i class="fas fa-phone"></i> +255 714 463 006</li>
+            <li><i class="fas fa-envelope"></i> info@firstlightacademy.co.tz</li>
+            <li><i class="far fa-clock"></i> Sat-Sun: 15:30-17:30</li>
           </ul>
-          <div class="whatsapp-btn" style="margin-top: 20px;">
-            <a href="https://wa.me/255789456123" class="btn btn-whatsapp" target="_blank">
-              <i class="fab fa-whatsapp"></i> WhatsApp Us
-            </a>
-          </div>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Subscribe for updates on tournaments and training schedules.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email" required>
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; <span id="currentYear">2024</span> FirstLight Academy. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #ff4757;"></i> for football development in Tanzania</p>
+        <p>&copy; 2024 FirstLight Football Academy. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- JavaScript -->
-  <script src="assets/js/main.js"></script>
   <script>
-    // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    // Language translation object
-    const translations = {
-      en: {
-        coachesTitle: "Our <span>Coaching Team</span>",
-        coachesSubtitle: "Certified professionals dedicated to youth development"
-      },
-      sw: {
-        coachesTitle: "Timu <span>Ya Wakochi</span>",
-        coachesSubtitle: "Wataalamu walioidhinishwa wanaojitolea kwa maendeleo ya vijana"
-      }
-    };
-
-    // Language toggle functionality
-    const languageBtn = document.getElementById('languageBtn');
-    const mobileLanguageBtn = document.getElementById('mobileLanguageBtn');
-    const languageDropdown = document.getElementById('languageDropdown');
-    const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
-    const currentLanguageSpan = document.getElementById('currentLanguage');
-    const mobileCurrentLanguageSpan = document.getElementById('mobileCurrentLanguage');
-    const langElements = document.querySelectorAll('[data-translate]');
-
-    // Function to update language
-    function updateLanguage(lang) {
-      // Update current language text
-      currentLanguageSpan.textContent = lang === 'en' ? 'English' : 'Kiswahili';
-      mobileCurrentLanguageSpan.textContent = lang === 'en' ? 'English' : 'Kiswahili';
-      
-      // Update data-lang attribute
-      document.documentElement.setAttribute('data-lang', lang);
-      
-      // Update active class in dropdowns
-      document.querySelectorAll('.language-option').forEach(option => {
-        option.classList.toggle('active', option.dataset.lang === lang);
-      });
-
-      // Update content
-      langElements.forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[lang] && translations[lang][key]) {
-          element.innerHTML = translations[lang][key];
-        }
-      });
-    }
-
-    // Event listeners for language toggle
-    languageBtn?.addEventListener('click', () => {
-      languageDropdown.style.display = languageDropdown.style.display === 'block' ? 'none' : 'block';
-    });
-
-    mobileLanguageBtn?.addEventListener('click', () => {
-      mobileLanguageDropdown.style.display = mobileLanguageDropdown.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!languageBtn?.contains(e.target) && !languageDropdown?.contains(e.target)) {
-        languageDropdown.style.display = 'none';
-      }
-      if (!mobileLanguageBtn?.contains(e.target) && !mobileLanguageDropdown?.contains(e.target)) {
-        mobileLanguageDropdown.style.display = 'none';
-      }
-    });
-
-    // Handle language selection
-    document.querySelectorAll('.language-option').forEach(option => {
-      option.addEventListener('click', () => {
-        const selectedLang = option.getAttribute('data-lang');
-        updateLanguage(selectedLang);
-        languageDropdown.style.display = 'none';
-        mobileLanguageDropdown.style.display = 'none';
-      });
-    });
-
-    // Mobile menu toggle
+    // Mobile Navigation
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
     const mobileNavClose = document.getElementById('mobileNavClose');
-
-    mobileMenuBtn?.addEventListener('click', () => {
-      mobileNav.style.display = 'block';
-      document.body.style.overflow = 'hidden';
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.add('active');
     });
-
-    mobileNavClose?.addEventListener('click', () => {
-      mobileNav.style.display = 'none';
-      document.body.style.overflow = 'auto';
+    
+    mobileNavClose.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
     });
-
-    // Close mobile nav when clicking links
+    
+    // Close mobile nav when clicking a link
     document.querySelectorAll('.mobile-nav a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileNav.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        mobileNav.classList.remove('active');
       });
     });
-
-    // Back to top button
-    const backToTop = document.getElementById('backToTop');
-
+    
+    // Header scroll effect
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
+      const header = document.getElementById('header');
+      
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
       } else {
-        backToTop.style.display = 'none';
+        header.classList.remove('scrolled');
       }
     });
-
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        if (email) {
+          alert('Thank you for subscribing to our newsletter!');
+          this.reset();
+        }
       });
+    }
+    
+    // Set active navigation link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if ((currentPage === 'index.html' && linkHref === 'index.html') || 
+          (currentPage !== 'index.html' && linkHref === currentPage)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
     });
-
-    // Initialize with English
-    updateLanguage('en');
+    
+    // Mobile navigation active link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if ((currentPage === 'index.html' && linkHref === 'index.html') || 
+          (currentPage !== 'index.html' && linkHref === currentPage)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
   </script>
 </body>
 </html>
