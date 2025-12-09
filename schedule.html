@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Training Schedule & Pricing | FirstLight Football Academy</title>
+  <meta name="description" content="View our training schedule, pricing, and age group sessions. Professional football training in Dar es Salaam with flexible weekend schedules."/>
+  <meta name="keywords" content="football training schedule Tanzania, soccer academy pricing Dar es Salaam, youth football sessions, training fees Tanzania">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="FirstLight Academy Logo">
+          <div class="logo-text">
+            <h1>FirstLight Academy</h1>
+            <span>Football Excellence</span>
+          </div>
+        </a>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="programs.html">Programs</a>
+          <a href="facilities.html">Facilities</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="schedule.html" class="active">Schedule</a>
+          <a href="contact.html" class="btn btn-secondary">Register Now</a>
+          
+          <!-- Language Toggle -->
+          <div class="language-toggle">
+            <button class="language-btn" id="languageBtn">
+              <i class="fas fa-globe"></i>
+              <span id="currentLanguage">English</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="language-dropdown" id="languageDropdown">
+              <div class="language-option active" data-lang="en">
+                <div class="language-flag flag-uk"></div>
+                English
+              </div>
+              <div class="language-option" data-lang="sw">
+                <div class="language-flag flag-tz"></div>
+                Kiswahili
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" id="mobileNavClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="coaches.html">Coaches</a>
+        <a href="schedule.html" class="active">Schedule</a>
+        <a href="contact.html">Register</a>
+        
+        <!-- Language Toggle for Mobile -->
+        <div class="language-toggle" style="margin-left: 0;">
+          <button class="language-btn" id="mobileLanguageBtn">
+            <i class="fas fa-globe"></i>
+            <span id="mobileCurrentLanguage">English</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="language-dropdown" id="mobileLanguageDropdown">
+            <div class="language-option active" data-lang="en">
+              <div class="language-flag flag-uk"></div>
+              English
+            </div>
+            <div class="language-option" data-lang="sw">
+              <div class="language-flag flag-tz"></div>
+              Kiswahili
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="page-header-content">
+        <h1 data-translate="scheduleTitle">Training <span>Schedule & Pricing</span></h1>
+        <p data-translate="scheduleSubtitle">Comprehensive training schedules and transparent pricing for all age groups</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Section -->
+  <section class="section schedule-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-translate="weeklySchedule">Weekly <span>Training Schedule</span></h2>
+        <div class="title-line"></div>
+        <p data-translate="scheduleDescription" style="max-width: 800px; margin: 20px auto 0; color: rgba(255, 255, 255, 0.8);">All training sessions are held at DYCCC Yemen Grounds, Chang'ombe. Each session lasts 2 hours.</p>
+      </div>
+
+      <div class="schedule-table">
+        <div class="schedule-card">
+          <div class="schedule-day">
+            <h3 data-translate="saturday">Saturday</h3>
+            <div class="day-badge">Weekend</div>
+          </div>
+          <div class="schedule-details">
+            <div class="time-slot">
+              <h4 data-translate="morningSession">Morning Session</h4>
+              <p class="time" data-translate="satMorningTime">07:30 - 09:30 AM</p>
+              <p data-translate="satMorningGroups">U6 & U10 Age Groups</p>
+              <p class="session-type" data-translate="skillDevelopment">Skill Development & Fun Games</p>
+            </div>
+            <div class="time-slot">
+              <h4 data-translate="afternoonSession">Afternoon Session</h4>
+              <p class="time" data-translate="satAfternoonTime">03:30 - 05:30 PM</p>
+              <p data-translate="satAfternoonGroups">U14 & U17 Age Groups</p>
+              <p class="session-type" data-translate="competitiveTraining">Competitive Training & Matches</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-card">
+          <div class="schedule-day">
+            <h3 data-translate="sunday">Sunday</h3>
+            <div class="day-badge">Weekend</div>
+          </div>
+          <div class="schedule-details">
+            <div class="time-slot">
+              <h4 data-translate="morningSession">Morning Session</h4>
+              <p class="time" data-translate="sunMorningTime">07:30 - 09:30 AM</p>
+              <p data-translate="sunMorningGroups">U14 & U17 Age Groups</p>
+              <p class="session-type" data-translate="tacticalTraining">Tactical Training</p>
+            </div>
+            <div class="time-slot">
+              <h4 data-translate="afternoonSession">Afternoon Session</h4>
+              <p class="time" data-translate="sunAfternoonTime">03:30 - 05:30 PM</p>
+              <p data-translate="sunAfternoonGroups">All Age Groups</p>
+              <p class="session-type" data-translate="friendlyMatches">Friendly Matches & Tournaments</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-card">
+          <div class="schedule-day">
+            <h3 data-translate="weekdayTraining">Weekday Training</h3>
+            <div class="day-badge" data-translate="optional">Optional</div>
+          </div>
+          <div class="schedule-details">
+            <div class="time-slot">
+              <h4 data-translate="tuesdayThursday">Tuesday & Thursday</h4>
+              <p class="time" data-translate="weekdayTime">04:30 - 06:00 PM</p>
+              <p data-translate="weekdayGroups">Advanced Players Only</p>
+              <p class="session-type" data-translate="advancedTraining">Advanced Technical Training</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Important Notes -->
+      <div class="notes-card">
+        <div class="notes-icon">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="notes-content">
+          <h3 data-translate="importantNotes">Important Notes</h3>
+          <ul>
+            <li data-translate="note1"><strong>Attendance:</strong> Regular attendance is required for all registered players</li>
+            <li data-translate="note2"><strong>Equipment:</strong> All training equipment is provided by the academy</li>
+            <li data-translate="note3"><strong>Uniform:</strong> Academy training kit is mandatory for all sessions</li>
+            <li data-translate="note4"><strong>Weather:</strong> Training continues in light rain; cancelled only for heavy rain</li>
+            <li data-translate="note5"><strong>Holidays:</strong> No training on public holidays unless notified</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section pricing-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-translate="pricingTitle">Academy <span>Pricing</span></h2>
+        <div class="title-line"></div>
+        <p data-translate="pricingSubtitle" style="max-width: 800px; margin: 20px auto 0; color: rgba(255, 255, 255, 0.8);">Transparent monthly fees with no hidden charges. All fees include professional coaching and equipment.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 data-translate="u6Package">U6 Package</h3>
+            <div class="price">
+              <span class="currency">TZS</span>
+              <span class="amount">50,000</span>
+              <span class="period" data-translate="perMonth">/month</span>
+            </div>
+            <p class="age-range" data-translate="u6Age">4-6 Years Old</p>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li data-translate="u6Feature1"><i class="fas fa-check"></i> 8 sessions per month</li>
+              <li data-translate="u6Feature2"><i class="fas fa-check"></i> Basic skill development</li>
+              <li data-translate="u6Feature3"><i class="fas fa-check"></i> Fun-based learning</li>
+              <li data-translate="u6Feature4"><i class="fas fa-check"></i> Motor skills training</li>
+              <li data-translate="u6Feature5"><i class="fas fa-check"></i> Academy T-shirt included</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn btn-secondary" data-translate="enrollNow">Enroll Now</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="popular-badge" data-translate="mostPopular">Most Popular</div>
+          <div class="pricing-header">
+            <h3 data-translate="u10u14Package">U10/U14 Package</h3>
+            <div class="price">
+              <span class="currency">TZS</span>
+              <span class="amount">75,000</span>
+              <span class="period" data-translate="perMonth">/month</span>
+            </div>
+            <p class="age-range" data-translate="u10u14Age">7-14 Years Old</p>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li data-translate="u10u14Feature1"><i class="fas fa-check"></i> 8-12 sessions per month</li>
+              <li data-translate="u10u14Feature2"><i class="fas fa-check"></i> Technical skill development</li>
+              <li data-translate="u10u14Feature3"><i class="fas fa-check"></i> Tactical understanding</li>
+              <li data-translate="u10u14Feature4"><i class="fas fa-check"></i> Competitive matches</li>
+              <li data-translate="u10u14Feature5"><i class="fas fa-check"></i> Full training kit included</li>
+              <li data-translate="u10u14Feature6"><i class="fas fa-check"></i> Tournament participation</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn btn-primary" data-translate="enrollNow">Enroll Now</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 data-translate="u17Package">U17 Package</h3>
+            <div class="price">
+              <span class="currency">TZS</span>
+              <span class="amount">100,000</span>
+              <span class="period" data-translate="perMonth">/month</span>
+            </div>
+            <p class="age-range" data-translate="u17Age">15-17 Years Old</p>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li data-translate="u17Feature1"><i class="fas fa-check"></i> 12+ sessions per month</li>
+              <li data-translate="u17Feature2"><i class="fas fa-check"></i> Advanced technical training</li>
+              <li data-translate="u17Feature3"><i class="fas fa-check"></i> Position-specific coaching</li>
+              <li data-translate="u17Feature4"><i class="fas fa-check"></i> League participation</li>
+              <li data-translate="u17Feature5"><i class="fas fa-check"></i> Full training kit included</li>
+              <li data-translate="u17Feature6"><i class="fas fa-check"></i> College recruitment support</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn btn-secondary" data-translate="enrollNow">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- Additional Fees -->
+      <div class="additional-fees">
+        <h3 data-translate="additionalFees">Additional Fees</h3>
+        <div class="fees-grid">
+          <div class="fee-item">
+            <div class="fee-icon">
+              <i class="fas fa-tshirt"></i>
+            </div>
+            <h4 data-translate="kitFee">Full Training Kit</h4>
+            <p class="fee-amount">TZS 80,000</p>
+            <p data-translate="kitDescription">(One-time purchase, includes home & away jerseys, shorts, socks)</p>
+          </div>
+          <div class="fee-item">
+            <div class="fee-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h4 data-translate="insuranceFee">Insurance Fee</h4>
+            <p class="fee-amount">TZS 10,000</p>
+            <p data-translate="insuranceDescription">(Annual medical insurance for all registered players)</p>
+          </div>
+          <div class="fee-item">
+            <div class="fee-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h4 data-translate="tournamentFee">Tournament Fee</h4>
+            <p class="fee-amount">TZS 5,000-20,000</p>
+            <p data-translate="tournamentDescription">(Per tournament, varies based on competition)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Information -->
+      <div class="payment-info">
+        <div class="payment-card">
+          <div class="payment-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <div class="payment-content">
+            <h3 data-translate="paymentMethods">Payment Methods</h3>
+            <div class="payment-options">
+              <div class="payment-option">
+                <i class="fas fa-mobile-alt"></i>
+                <span data-translate="mobileMoney">Mobile Money (M-Pesa, Tigo Pesa)</span>
+              </div>
+              <div class="payment-option">
+                <i class="fas fa-university"></i>
+                <span data-translate="bankTransfer">Bank Transfer (CRDB, NMB)</span>
+              </div>
+              <div class="payment-option">
+                <i class="fas fa-money-bill-wave"></i>
+                <span data-translate="cashPayment">Cash Payment at Office</span>
+              </div>
+            </div>
+            <p class="payment-note" data-translate="paymentNote"><strong>Note:</strong> Fees are due by the 5th of each month. Late payments may result in suspension from training.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 data-translate="readyToJoin">Ready to Join Our Academy?</h2>
+        <p data-translate="startJourney">Start your football journey today with professional coaching and modern facilities.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary" data-translate="registerNow">Register Now</a>
+          <a href="contact.html#trial" class="btn btn-secondary" data-translate="bookTrial">Book Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/images/logo.png" alt="FirstLight Academy">
+          <p data-translate="footerDesc">Professional youth football academy in Dar es Salaam, developing the next generation of Tanzanian football talent.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-translate="quickLinks">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-translate="home">Home</a></li>
+            <li><a href="about.html" data-translate="about">About Us</a></li>
+            <li><a href="programs.html" data-translate="programs">Programs</a></li>
+            <li><a href="schedule.html" data-translate="schedule">Schedule</a></li>
+            <li><a href="coaches.html" data-translate="coaches">Coaches</a></li>
+            <li><a href="contact.html" data-translate="contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-translate="contactInfo">Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> <span data-translate="address">DYCCC Yemen Grounds, Chang'ombe</span></li>
+            <li><i class="fas fa-phone"></i> +255 629 384 806</li>
+            <li><i class="fas fa-envelope"></i> info@firstlightacademy.co.tz</li>
+            <li><i class="far fa-clock"></i> <span data-translate="hours">Sat-Sun: 7:30AM-5:30PM</span></li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h4 data-translate="newsletter">Newsletter</h4>
+          <p data-translate="newsletterDesc">Subscribe for updates on tournaments and training schedules.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email" data-translate="emailPlaceholder">
+            <button type="submit" data-translate="subscribe">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p data-translate="copyright">&copy; 2024 FirstLight Football Academy. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" data-translate="privacy">Privacy Policy</a>
+          <a href="#" data-translate="terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize page-specific functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Countdown timer for next training session
+      function updateTrainingCountdown() {
+        const now = new Date();
+        const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        
+        let nextTraining = new Date();
+        
+        // If today is Saturday and time is before 7:30 AM
+        if (day === 6 && (hours < 7 || (hours === 7 && minutes < 30))) {
+          nextTraining.setHours(7, 30, 0, 0);
+        } 
+        // If today is Saturday after 7:30 AM or Sunday
+        else if (day === 6 || day === 0) {
+          // Next Saturday
+          const daysUntilNextSaturday = (6 - day + 7) % 7 || 7;
+          nextTraining.setDate(now.getDate() + daysUntilNextSaturday);
+          nextTraining.setHours(7, 30, 0, 0);
+        } 
+        // Weekday (Monday-Friday)
+        else {
+          // Next Saturday
+          const daysUntilSaturday = 6 - day;
+          nextTraining.setDate(now.getDate() + daysUntilSaturday);
+          nextTraining.setHours(7, 30, 0, 0);
+        }
+        
+        const diff = nextTraining - now;
+        
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hoursRemaining = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutesRemaining = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secondsRemaining = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        // Update countdown display if element exists
+        const countdownElement = document.getElementById('nextSessionCountdown');
+        if (countdownElement) {
+          countdownElement.innerHTML = `
+            <div class="countdown-item">
+              <span class="countdown-number">${days}</span>
+              <span class="countdown-label" data-translate="days">Days</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number">${hoursRemaining}</span>
+              <span class="countdown-label" data-translate="hours">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number">${minutesRemaining}</span>
+              <span class="countdown-label" data-translate="minutes">Minutes</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number">${secondsRemaining}</span>
+              <span class="countdown-label" data-translate="seconds">Seconds</span>
+            </div>
+          `;
+        }
+      }
+      
+      // Initialize countdown
+      updateTrainingCountdown();
+      setInterval(updateTrainingCountdown, 1000);
+      
+      // Newsletter form submission
+      const newsletterForm = document.querySelector('.newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          if (email) {
+            alert(currentLang === 'en' ? 'Thank you for subscribing!' : 'Asante kwa kujiandikisha!');
+            this.reset();
+          }
+        });
+      }
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href !== '#') {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
