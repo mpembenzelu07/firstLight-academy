@@ -3,13 +3,703 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Training Programs | Age Groups & Development</title>
-  <meta name="description" content="Comprehensive football training programs for U6, U10, U14, U17 age groups. Professional development pathways at FirstLight Academy."/>
-  <meta name="keywords" content="football training programs, youth development programs, age group training Tanzania">
-  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <title>Training Programs | FirstLight Football Academy | U6, U10, U14 Training</title>
+  <meta name="description" content="Professional football training programs for U6, U10, and U14 age groups. Age-appropriate development at FirstLight Academy."/>
+  <link rel="icon" href="/firstLight-academy/images/logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root {
+      --primary: #0A2463;
+      --secondary: #FF6B35;
+      --light: #f8f9fa;
+      --dark: #1e1e24;
+      --text-dark: #333;
+      --text-light: #fff;
+      --gray: #6c757d;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--light);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary);
+      color: var(--text-light);
+    }
+
+    .btn-primary:hover {
+      background-color: #e55a2b;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background-color: var(--primary);
+      color: var(--text-light);
+    }
+
+    .btn-secondary:hover {
+      background-color: #081F4E;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2 span {
+      color: var(--secondary);
+    }
+
+    .title-line {
+      height: 4px;
+      width: 80px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      margin: 0 auto 20px;
+      border-radius: 2px;
+    }
+
+    /* Header & Navigation - Same as Homepage */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    #header.scrolled {
+      padding: 10px 0;
+      background-color: rgba(255, 255, 255, 0.98);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    .logo-text h1 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+
+    .logo-text span {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--dark);
+      position: relative;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--secondary);
+      border-radius: 2px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.9)), 
+                  url('/firstLight-academy/images/u10.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--text-light);
+      padding: 180px 0 100px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .page-header-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .page-header-content h1 span {
+      color: var(--secondary);
+    }
+
+    .page-header-content p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Program Details */
+    .program-details {
+      background-color: var(--light);
+    }
+
+    .program-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .program-tab {
+      padding: 12px 30px;
+      background: white;
+      border: 2px solid var(--primary);
+      border-radius: 50px;
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .program-tab.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .program-tab:hover:not(.active) {
+      background: rgba(10, 36, 99, 0.1);
+    }
+
+    .program-content {
+      display: none;
+    }
+
+    .program-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .program-card-detail {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .program-image {
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .program-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .program-card-detail:hover .program-image img {
+      transform: scale(1.05);
+    }
+
+    .program-info {
+      padding: 40px;
+    }
+
+    .program-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .program-age-badge {
+      background: var(--secondary);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .program-duration {
+      color: var(--gray);
+      font-weight: 600;
+    }
+
+    .program-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(10, 36, 99, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .feature-icon i {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    /* Curriculum Section */
+    .curriculum-section {
+      background-color: var(--primary);
+      color: var(--text-light);
+    }
+
+    .curriculum-section .section-title h2,
+    .curriculum-section .section-title p {
+      color: var(--text-light);
+    }
+
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .curriculum-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .curriculum-card h3 {
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    /* Age Group Comparison */
+    .comparison-section {
+      background-color: var(--light);
+    }
+
+    .comparison-table {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background: var(--primary);
+      color: white;
+      padding: 20px;
+      text-align: left;
+    }
+
+    td {
+      padding: 15px 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover {
+      background: rgba(10, 36, 99, 0.05);
+    }
+
+    /* Footer - Same as Homepage */
+    footer {
+      background-color: var(--dark);
+      color: var(--text-light);
+      padding: 80px 0 30px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-logo img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      color: white;
+    }
+
+    .social-links a:hover {
+      background-color: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    .footer-links h4 {
+      color: var(--text-light);
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-links h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+
+    .footer-links ul li {
+      margin-bottom: 15px;
+    }
+
+    .footer-links ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .footer-links ul li a:hover {
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+
+    .footer-links ul li i {
+      margin-right: 10px;
+      color: var(--secondary);
+      width: 20px;
+    }
+
+    .footer-newsletter p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .newsletter-form input {
+      padding: 15px;
+      border-radius: 5px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-light);
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .newsletter-form button {
+      padding: 15px;
+      background-color: var(--secondary);
+      color: var(--text-light);
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+      background-color: #E55A2B;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-bottom p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .page-header-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .program-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0;
+      }
+      
+      .page-header {
+        padding: 150px 0 80px;
+      }
+      
+      .page-header-content h1 {
+        font-size: 2rem;
+      }
+      
+      .page-header-content p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .program-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .program-tab {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .program-info {
+        padding: 30px 20px;
+      }
+      
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .footer-bottom-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-header-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .program-image {
+        height: 200px;
+      }
+      
+      .program-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100%;
+      background: var(--dark);
+      padding: 100px 30px 30px;
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .mobile-nav .nav-links a {
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .mobile-nav .btn {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <!-- Header & Navigation -->
@@ -17,7 +707,7 @@
     <div class="container">
       <nav class="navbar">
         <a href="index.html" class="logo">
-          <img src="assets/images/logo.png" alt="FirstLight Academy Logo">
+          <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy Logo">
           <div class="logo-text">
             <h1>FirstLight Academy</h1>
             <span>Football Excellence</span>
@@ -32,25 +722,6 @@
           <a href="coaches.html">Coaches</a>
           <a href="schedule.html">Schedule</a>
           <a href="contact.html" class="btn btn-secondary">Register Now</a>
-          
-          <!-- Language Toggle -->
-          <div class="language-toggle">
-            <button class="language-btn" id="languageBtn">
-              <i class="fas fa-globe"></i>
-              <span id="currentLanguage">English</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="language-dropdown" id="languageDropdown">
-              <div class="language-option active" data-lang="en">
-                <div class="language-flag flag-uk"></div>
-                English
-              </div>
-              <div class="language-option" data-lang="sw">
-                <div class="language-flag flag-tz"></div>
-                Kiswahili
-              </div>
-            </div>
-          </div>
         </div>
         
         <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -58,229 +729,359 @@
         </button>
       </nav>
     </div>
-    
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobileNav">
-      <button class="mobile-nav-close" id="mobileNavClose">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="programs.html" class="active">Programs</a>
-        <a href="facilities.html">Facilities</a>
-        <a href="coaches.html">Coaches</a>
-        <a href="schedule.html">Schedule</a>
-        <a href="contact.html">Register</a>
-        
-        <!-- Language Toggle for Mobile -->
-        <div class="language-toggle" style="margin-left: 0;">
-          <button class="language-btn" id="mobileLanguageBtn">
-            <i class="fas fa-globe"></i>
-            <span id="mobileCurrentLanguage">English</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="language-dropdown" id="mobileLanguageDropdown">
-            <div class="language-option active" data-lang="en">
-              <div class="language-flag flag-uk"></div>
-              English
-            </div>
-            <div class="language-option" data-lang="sw">
-              <div class="language-flag flag-tz"></div>
-              Kiswahili
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="programs.html" class="active">Programs</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="coaches.html">Coaches</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="contact.html" class="btn btn-secondary">Register</a>
+    </div>
+  </div>
 
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1 data-translate="programsTitle">Training <span>Programs</span></h1>
-      <p data-translate="programsSubtitle">Comprehensive development programs for all age groups</p>
+      <div class="page-header-content">
+        <h1>Training <span>Programs</span></h1>
+        <p>Professional age-specific training programs designed for optimal development</p>
+      </div>
     </div>
   </section>
 
-  <!-- Age Groups -->
-  <section class="section">
+  <!-- Program Tabs -->
+  <section class="section program-details">
+    <div class="container">
+      <div class="program-tabs">
+        <div class="program-tab active" data-tab="u6">U6 Little Stars</div>
+        <div class="program-tab" data-tab="u10">U10 Development</div>
+        <div class="program-tab" data-tab="u14">U14 Academy</div>
+      </div>
+
+      <!-- U6 Program -->
+      <div class="program-content active" id="u6-content">
+        <div class="program-card-detail">
+          <div class="program-image">
+            <img src="/firstLight-academy/images/u6.jpg" alt="U6 Little Stars">
+          </div>
+          <div class="program-info">
+            <div class="program-header">
+              <div class="program-age-badge">Ages 4-6</div>
+              <div class="program-duration">2 Hours per Session</div>
+            </div>
+            
+            <h2>U6 Little Stars Program</h2>
+            <p>Our introductory program focuses on making football fun while developing basic motor skills and coordination. Designed specifically for our youngest players, this program creates a love for the game through playful exercises and positive reinforcement.</p>
+            
+            <div class="program-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-child"></i>
+                </div>
+                <div>
+                  <h4>Motor Skill Development</h4>
+                  <p>Basic coordination, balance, and movement patterns</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-futbol"></i>
+                </div>
+                <div>
+                  <h4>Ball Familiarity</h4>
+                  <p>Introduction to ball control through fun games</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div>
+                  <h4>Social Skills</h4>
+                  <p>Learning to play with others and follow instructions</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-smile"></i>
+                </div>
+                <div>
+                  <h4>Fun First Approach</h4>
+                  <p>Creating positive experiences with football</p>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 30px;">
+              <h3>Key Focus Areas:</h3>
+              <ul style="margin-top: 15px; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">Basic dribbling and ball control</li>
+                <li style="margin-bottom: 10px;">Simple passing and receiving</li>
+                <li style="margin-bottom: 10px;">Spatial awareness games</li>
+                <li style="margin-bottom: 10px;">Introduction to scoring goals</li>
+                <li style="margin-bottom: 10px;">Fun-based agility exercises</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- U10 Program -->
+      <div class="program-content" id="u10-content">
+        <div class="program-card-detail">
+          <div class="program-image">
+            <img src="/firstLight-academy/images/u10.jpg" alt="U10 Development">
+          </div>
+          <div class="program-info">
+            <div class="program-header">
+              <div class="program-age-badge">Ages 7-10</div>
+              <div class="program-duration">2 Hours per Session</div>
+            </div>
+            
+            <h2>U10 Development Program</h2>
+            <p>Building on fundamentals, this program introduces technical skills and basic tactical concepts. Players develop better coordination, learn team play, and start understanding the game's basic principles in a supportive environment.</p>
+            
+            <div class="program-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-futbol"></i>
+                </div>
+                <div>
+                  <h4>Technical Skills</h4>
+                  <p>Dribbling, passing, shooting, and ball control techniques</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div>
+                  <h4>Game Understanding</h4>
+                  <p>Basic positional awareness and decision making</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-running"></i>
+                </div>
+                <div>
+                  <h4>Physical Development</h4>
+                  <p>Agility, coordination, and basic fitness training</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <div>
+                  <h4>Teamwork Skills</h4>
+                  <p>Learning to work together and support teammates</p>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 30px;">
+              <h3>Key Focus Areas:</h3>
+              <ul style="margin-top: 15px; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">Advanced ball control skills</li>
+                <li style="margin-bottom: 10px;">Passing accuracy and timing</li>
+                <li style="margin-bottom: 10px;">Basic defensive principles</li>
+                <li style="margin-bottom: 10px;">Small-sided game tactics</li>
+                <li style="margin-bottom: 10px;">Position-specific basics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- U14 Program -->
+      <div class="program-content" id="u14-content">
+        <div class="program-card-detail">
+          <div class="program-image">
+            <img src="/firstLight-academy/images/u14.jpg" alt="U14 Academy">
+          </div>
+          <div class="program-info">
+            <div class="program-header">
+              <div class="program-age-badge">Ages 11-14</div>
+              <div class="program-duration">2 Hours per Session</div>
+            </div>
+            
+            <h2>U14 Academy Program</h2>
+            <p>Our advanced program focuses on competitive development, tactical understanding, and position-specific training. Players prepare for higher levels of competition while continuing to develop technical excellence and game intelligence.</p>
+            
+            <div class="program-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-chess"></i>
+                </div>
+                <div>
+                  <h4>Tactical Development</h4>
+                  <p>Advanced game strategies and positional play</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                  <h4>Position Specialization</h4>
+                  <p>Developing skills for specific playing positions</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div>
+                  <h4>Competitive Experience</h4>
+                  <p>Regular matches and tournament participation</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-dumbbell"></i>
+                </div>
+                <div>
+                  <h4>Advanced Fitness</h4>
+                  <p>Strength, speed, and endurance training</p>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 30px;">
+              <h3>Key Focus Areas:</h3>
+              <ul style="margin-top: 15px; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">Advanced tactical understanding</li>
+                <li style="margin-bottom: 10px;">Position-specific skills development</li>
+                <li style="margin-bottom: 10px;">Match analysis and strategy</li>
+                <li style="margin-bottom: 10px;">Leadership and communication skills</li>
+                <li style="margin-bottom: 10px;">Competitive match preparation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Section -->
+  <section class="section curriculum-section">
     <div class="container">
       <div class="section-title">
-        <h2 data-translate="ourAgeGroups">Our <span>Age Groups</span></h2>
+        <h2>Our <span>Curriculum</span></h2>
         <div class="title-line"></div>
-        <p style="max-width: 700px; margin: 20px auto 0; color: rgba(255, 255, 255, 0.8);" data-translate="tailoredPrograms">Tailored training programs for each developmental stage</p>
+        <p>Comprehensive development approach for all age groups</p>
       </div>
       
-      <div class="age-grid">
-        <div class="age-card">
-          <div class="age-img" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53);">
-            <i class="fas fa-child"></i>
-          </div>
-          <div class="age-content">
-            <div class="age-badge" data-translate="u6Badge">U6 Little Stars</div>
-            <h3 data-translate="u6Title">Introduction to Football</h3>
-            <p data-translate="u6Desc">Fun-based learning focusing on basic motor skills, ball familiarity, and social development through playful exercises.</p>
-            <ul class="age-features">
-              <li><i class="fas fa-futbol"></i> Basic ball control exercises</li>
-              <li><i class="fas fa-running"></i> Motor skills development</li>
-              <li><i class="fas fa-smile"></i> Fun & engaging sessions</li>
-              <li><i class="fas fa-users"></i> Social interaction games</li>
-              <li><i class="fas fa-heart"></i> Building confidence</li>
-              <li><i class="fas fa-gamepad"></i> Play-based learning</li>
-            </ul>
-            <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-              <p><strong>Age:</strong> 4-6 years</p>
-              <p><strong>Focus:</strong> Fun, Fundamentals, Social Skills</p>
-            </div>
-          </div>
+      <div class="curriculum-grid">
+        <div class="curriculum-card">
+          <h3>Technical Skills</h3>
+          <p>Ball mastery, passing accuracy, shooting technique, dribbling skills, and first touch development.</p>
         </div>
         
-        <div class="age-card">
-          <div class="age-img" style="background: linear-gradient(135deg, #4ECDC4, #44A08D);">
-            <i class="fas fa-user-friends"></i>
-          </div>
-          <div class="age-content">
-            <div class="age-badge" data-translate="u10Badge">U10 Development Squad</div>
-            <h3 data-translate="u10Title">Skill Foundation</h3>
-            <p data-translate="u10Desc">Building fundamental techniques, introducing basic tactics, and developing game intelligence through structured training.</p>
-            <ul class="age-features">
-              <li><i class="fas fa-futbol"></i> Technical skills development</li>
-              <li><i class="fas fa-brain"></i> Basic tactical understanding</li>
-              <li><i class="fas fa-gamepad"></i> Small-sided games</li>
-              <li><i class="fas fa-running"></i> Coordination & agility</li>
-              <li><i class="fas fa-users"></i> Teamwork fundamentals</li>
-              <li><i class="fas fa-chart-line"></i> Basic match analysis</li>
-            </ul>
-            <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-              <p><strong>Age:</strong> 7-10 years</p>
-              <p><strong>Focus:</strong> Technique, Tactics, Teamwork</p>
-            </div>
-          </div>
+        <div class="curriculum-card">
+          <h3>Tactical Understanding</h3>
+          <p>Game strategies, positional awareness, decision making, and reading of the game.</p>
         </div>
         
-        <div class="age-card">
-          <div class="age-img" style="background: linear-gradient(135deg, #FFD166, #FF9A3C);">
-            <i class="fas fa-users"></i>
-          </div>
-          <div class="age-content">
-            <div class="age-badge" data-translate="u14Badge">U14 Elite Squad</div>
-            <h3 data-translate="u14Title">Advanced Development</h3>
-            <p data-translate="u14Desc">Advanced technical training, tactical sophistication, position-specific skills, and competitive match experience.</p>
-            <ul class="age-features">
-              <li><i class="fas fa-futbol"></i> Advanced techniques</li>
-              <li><i class="fas fa-chess"></i> Tactical awareness</li>
-              <li><i class="fas fa-trophy"></i> Competitive matches</li>
-              <li><i class="fas fa-chart-line"></i> Performance analysis</li>
-              <li><i class="fas fa-user-md"></i> Position-specific training</li>
-              <li><i class="fas fa-dumbbell"></i> Strength & conditioning</li>
-            </ul>
-            <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-              <p><strong>Age:</strong> 11-14 years</p>
-              <p><strong>Focus:</strong> Advanced Skills, Competition, Specialization</p>
-            </div>
-          </div>
+        <div class="curriculum-card">
+          <h3>Physical Development</h3>
+          <p>Speed, agility, coordination, strength, and endurance training appropriate for each age.</p>
+        </div>
+        
+        <div class="curriculum-card">
+          <h3>Mental Skills</h3>
+          <p>Concentration, confidence, resilience, and leadership development.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Program Features -->
-  <section class="section" style="background: var(--darker);">
+  <!-- Age Group Comparison -->
+  <section class="section comparison-section">
     <div class="container">
       <div class="section-title">
-        <h2>Program <span>Features</span></h2>
+        <h2>Program <span>Comparison</span></h2>
         <div class="title-line"></div>
+        <p>Find the right program for your young athlete</p>
       </div>
       
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-clipboard-check"></i>
-          </div>
-          <h3>Structured Curriculum</h3>
-          <p>Progressive training program following international youth development standards.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-chart-bar"></i>
-          </div>
-          <h3>Progress Tracking</h3>
-          <p>Regular assessments and performance tracking with detailed feedback.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-medal"></i>
-          </div>
-          <h3>Competitive Platform</h3>
-          <p>Regular matches and tournaments against other academies and clubs.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-user-graduate"></i>
-          </div>
-          <h3>Holistic Development</h3>
-          <p>Focus on character building, discipline, teamwork and leadership skills.</p>
-        </div>
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Features</th>
+              <th>U6 Little Stars</th>
+              <th>U10 Development</th>
+              <th>U14 Academy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Age Range</strong></td>
+              <td>4-6 years</td>
+              <td>7-10 years</td>
+              <td>11-14 years</td>
+            </tr>
+            <tr>
+              <td><strong>Focus</strong></td>
+              <td>Fun & Basic Skills</td>
+              <td>Fundamentals & Team Play</td>
+              <td>Advanced Skills & Competition</td>
+            </tr>
+            <tr>
+              <td><strong>Session Duration</strong></td>
+              <td>2 hours</td>
+              <td>2 hours</td>
+              <td>2 hours</td>
+            </tr>
+            <tr>
+              <td><strong>Training Days</strong></td>
+              <td>Saturday & Sunday</td>
+              <td>Saturday & Sunday</td>
+              <td>Saturday & Sunday</td>
+            </tr>
+            <tr>
+              <td><strong>Training Time</strong></td>
+              <td>15:30-17:30</td>
+              <td>15:30-17:30</td>
+              <td>15:30-17:30</td>
+            </tr>
+            <tr>
+              <td><strong>Monthly Fee</strong></td>
+              <td>60,000 TZS</td>
+              <td>60,000 TZS</td>
+              <td>60,000 TZS</td>
+            </tr>
+            <tr>
+              <td><strong>Free Trial</strong></td>
+              <td>Available</td>
+              <td>Available</td>
+              <td>Available</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-  </section>
-
-  <!-- Training Methodology -->
-  <section class="section">
-    <div class="container">
-      <div class="content-grid">
-        <div class="content-text">
-          <h2>Our <span>Training Methodology</span></h2>
-          <p>At FirstLight Academy, we follow a player-centered approach that focuses on individual development within a team environment.</p>
-          
-          <div style="margin-top: 30px;">
-            <h4 style="color: var(--secondary); margin-bottom: 15px;">Key Principles:</h4>
-            <ul style="list-style: none; color: rgba(255, 255, 255, 0.8);">
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Age-appropriate training sessions
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Individual skill development
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Small-sided games for decision making
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Positive reinforcement and feedback
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                Match analysis and tactical understanding
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="content-image">
-          <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Training Methodology">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="section cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Ready to Start Training?</h2>
-        <p style="margin-bottom: 40px;">Choose the right program for your age group and begin your football journey today.</p>
-        <div class="hero-buttons">
-          <a href="schedule.html" class="btn btn-primary">View Schedule & Pricing</a>
-          <a href="contact.html" class="btn btn-secondary">Register Now</a>
-        </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="contact.html" class="btn btn-primary">Register for a Free Trial</a>
       </div>
     </div>
   </section>
@@ -290,7 +1091,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <img src="assets/images/logo.png" alt="FirstLight Academy">
+          <img src="/firstLight-academy/images/logo.png" alt="FirstLight Academy">
           <p>Professional youth football academy in Dar es Salaam, developing the next generation of Tanzanian football talent.</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -306,43 +1107,130 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="programs.html">Programs</a></li>
-            <li><a href="facilities.html">Facilities</a></li>
-            <li><a href="coaches.html">Coaches</a></li>
             <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="contact.html">Register Now</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-links">
-          <h4>Training Info</h4>
-          <ul>
-            <li><a href="programs.html">Training Programs</a></li>
-            <li><a href="schedule.html">Schedule & Pricing</a></li>
-            <li><a href="facilities.html">Training Facilities</a></li>
-            <li><a href="contact.html">Registration Process</a></li>
-            <li><a href="contact.html">FAQ</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
           <h4>Contact Info</h4>
-          <ul style="color: rgba(255, 255, 255, 0.7);">
-            <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i> DYCCC Yemen Grounds, Chang'ombe</li>
-            <li><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> +255 629 384 806</li>
-            <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i> info@firstlightacademy.co.tz</li>
-            <li><i class="far fa-clock" style="margin-right: 10px; color: var(--secondary);"></i> Sat-Sun: 15:30-17:30</li>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> DYCCC Yemen Grounds, Chang'ombe</li>
+            <li><i class="fas fa-phone"></i> +255 629 384 806</li>
+            <li><i class="fas fa-phone"></i> +255 714 463 006</li>
+            <li><i class="fas fa-envelope"></i> info@firstlightacademy.co.tz</li>
+            <li><i class="far fa-clock"></i> Sat-Sun: 15:30-17:30</li>
           </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Subscribe for updates on tournaments and training schedules.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email" required>
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2024 FirstLight Football Academy. All rights reserved. | Dar es Salaam, Tanzania</p>
-        <p style="margin-top: 10px;">Developing Tanzanian Football Talent</p>
+        <p>&copy; 2024 FirstLight Football Academy. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script>
+    // Mobile Navigation
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+    });
+    
+    mobileNavClose.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+    });
+    
+    // Close mobile nav when clicking a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+      });
+    });
+    
+    // Program Tabs
+    const programTabs = document.querySelectorAll('.program-tab');
+    const programContents = document.querySelectorAll('.program-content');
+    
+    programTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        programTabs.forEach(t => t.classList.remove('active'));
+        programContents.forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        // Show corresponding content
+        const tabId = tab.getAttribute('data-tab');
+        const contentId = `${tabId}-content`;
+        document.getElementById(contentId).classList.add('active');
+      });
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        if (email) {
+          alert('Thank you for subscribing to our newsletter!');
+          this.reset();
+        }
+      });
+    }
+    
+    // Set active navigation link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if ((currentPage === 'index.html' && linkHref === 'index.html') || 
+          (currentPage !== 'index.html' && linkHref === currentPage)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+    
+    // Mobile navigation active link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if ((currentPage === 'index.html' && linkHref === 'index.html') || 
+          (currentPage !== 'index.html' && linkHref === currentPage)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
